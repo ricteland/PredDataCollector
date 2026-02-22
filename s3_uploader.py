@@ -29,12 +29,20 @@ def upload_and_cleanup():
 
     upload_count = 0
     delete_count = 0
+    skip_count = 0
+    now = time.time()
 
     # Walk through the entire data directory recursively
     for root, dirs, files in os.walk(DATA_DIR):
         for file in files:
             if file.endswith(".parquet"):
                 local_path = os.path.join(root, file)
+                
+                # Check if file was modified in the last 5 minutes (300 seconds)
+                if now - os.path.getmtime(local_path) < 300:
+                    print(f"[SKIPPED] Active file still being written: {file}")
+                    skip_count += 1
+                    continue
                 
                 # Create the S3 object key (maintaining the exact folder structure)
                 # Example: data/BTC/15m/... -> BTC/15m/...
@@ -67,7 +75,7 @@ def upload_and_cleanup():
             except Exception:
                 pass
 
-    print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Nightly job complete. Uploaded {upload_count} files, deleted {delete_count} files locally.")
+    print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Nightly job complete. Uploaded {upload_count} files, deleted {delete_count} files locally. Skipped {skip_count} active files.")
 
 if __name__ == "__main__":
     upload_and_cleanup()
