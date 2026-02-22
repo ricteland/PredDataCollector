@@ -18,7 +18,7 @@ class DataLogger:
         self.snapshots_buffer = []
         self.ticks_buffer = []
         self.last_flush = time.time()
-        self.flush_interval = 60 # seconds
+        self.flush_interval = 30 # seconds
 
     def add_snapshot(self, timestamp, asset_id, bids, asks):
         self.snapshots_buffer.append({
@@ -55,6 +55,8 @@ class DataLogger:
             'end_date': self.end_date
         })
         shared_state.state['polymarket_trades'] += 1
+        if self.market_slug in shared_state.state['markets']:
+            shared_state.state['markets'][self.market_slug]['trades'] += 1
 
     def flush_if_needed(self):
         if time.time() - self.last_flush >= self.flush_interval:
@@ -183,13 +185,27 @@ def update_global_routing(data):
                 }
                 tracked_slugs.append(slug)
                 
+                # Update Market Trackers for Dashboard TUI
+                if slug not in shared_state.state['markets']:
+                    shared_state.state['markets'][slug] = {
+                        'coin': coin,
+                        'timeframe': tf,
+                        'end_date': end_date,
+                        'trades': logger.trades_buffer.__len__() if logger else 0
+                    }
+                
     # Force flush any loggers that fell out of the active window
+    active_slugs_set = set(tracked_slugs)
+    keys_to_remove = [s for s in shared_state.state['markets'].keys() if s not in active_slugs_set]
+    for s in keys_to_remove:
+        del shared_state.state['markets'][s]
+        
     for token_id, meta in active_tokens.items():
         if token_id not in new_active_tokens:
              meta['logger'].flush()
              
     active_tokens = new_active_tokens
-    shared_state.state['slugs_active'] = len(tracked_slugs)
+    shared_state.state['slugs_active'] = len(active_slugs_set)
     shared_state.state['next_slug_update'] = time.time() + 900
 
 
@@ -242,6 +258,8 @@ async def subscribe_and_listen():
             backoff = min(60, backoff * 2)
             continue
         except Exception as e:
+            if isinstance(e, asyncio.CancelledError):
+                raise
             await asyncio.sleep(backoff)
             backoff = min(60, backoff * 2)
             continue
@@ -307,7 +325,7 @@ async def main_daemon():
     
     try:
         await asyncio.gather(fetcher_task, ws_task)
-    except KeyboardInterrupt:
+    except (KeyboardInterrupt, asyncio.CancelledError):
         pass
     finally:
         unique_loggers = { meta['logger'] for meta in active_tokens.values() }

@@ -44,7 +44,8 @@ def generate_dashboard() -> Layout:
     layout = Layout()
     layout.split_column(
         Layout(name="header", size=3),
-        Layout(name="body")
+        Layout(name="metrics", size=10),
+        Layout(name="markets")
     )
 
     # 3. Header Segment
@@ -76,7 +77,26 @@ def generate_dashboard() -> Layout:
     body_table.add_row("[yellow]Next Disk Flush In[/yellow]", f"[yellow]{flush_time}s[/yellow]")
     body_table.add_row("[magenta]Next Node.js API Slugs Rotation In[/magenta]", f"[magenta]{slug_time}s[/magenta]")
 
-    layout["body"].update(Panel(body_table, title="[bold]Concurrent Telemetry Mappings[/bold]"))
+    layout["metrics"].update(Panel(body_table, title="[bold]Concurrent Telemetry Mappings[/bold]"))
+    
+    # 5. Active Markets Table
+    market_table = Table(expand=True, box=box.ROUNDED)
+    market_table.add_column("Coin", justify="center", style="yellow")
+    market_table.add_column("TF", justify="center", style="magenta")
+    market_table.add_column("Market Slug", style="cyan")
+    market_table.add_column("Resolution (UTC)", style="white")
+    market_table.add_column("Session Trades", justify="right", style="green")
+
+    for slug, info in shared_state.state.get('markets', {}).items():
+        market_table.add_row(
+            info['coin'],
+            info['timeframe'],
+            slug,
+            str(info['end_date']),
+            f"{info['trades']:,}"
+        )
+
+    layout["markets"].update(Panel(market_table, title="[bold]Active Market Detail Trackers[/bold]"))
     
     return layout
 
@@ -104,4 +124,6 @@ if __name__ == "__main__":
     try:
         asyncio.run(run_orchestration())
     except KeyboardInterrupt:
-        pass
+        # Avoid messy asyncio cancellation tracebacks and alert user of graceful save
+        console.print("\n[bold green]Initiating Graceful Shutdown...[/bold green]")
+        console.print("[yellow]Saving all active memory buffers to Parquet files safely.[/yellow]")

@@ -13,7 +13,7 @@ class BinanceDataLogger:
         self.trades_buffer = []
         self.ticks_buffer = []
         self.last_flush = time.time()
-        self.flush_interval = 60 # seconds
+        self.flush_interval = 30 # seconds
 
     def add_trade(self, timestamp, price, size, is_buyer_maker):
         # In Binance, if the buyer is the maker, the taker (aggressor) was selling.
@@ -68,16 +68,7 @@ class BinanceDataLogger:
         shared_state.state['next_flush_time'] = self.last_flush + self.flush_interval
         # Removed the print statement as requested.
 
-
-async def binance_ws_loop():
-    # We subscribe to @aggTrade for executions and @bookTicker for the top of the orderbook
-    url = "wss://stream.binance.com:9443/ws/btcusdt@aggTrade/ethusdt@aggTrade/btcusdt@bookTicker/ethusdt@bookTicker"
-    
-    loggers = {
-        'BTC': BinanceDataLogger('BTC'),
-        'ETH': BinanceDataLogger('ETH')
-    }
-
+async def _run_binance_ws(url, loggers):
     backoff = 3
     async for websocket in websockets.connect(url, ping_interval=20, ping_timeout=20):
         backoff = 3
@@ -134,9 +125,27 @@ async def binance_ws_loop():
             backoff = min(60, backoff * 2)
             continue
         except Exception as e:
+            if isinstance(e, asyncio.CancelledError):
+                raise
             await asyncio.sleep(backoff)
             backoff = min(60, backoff * 2)
             continue
+
+async def binance_ws_loop():
+    url = "wss://stream.binance.com:9443/ws/btcusdt@aggTrade/ethusdt@aggTrade/btcusdt@bookTicker/ethusdt@bookTicker"
+    
+    loggers = {
+        'BTC': BinanceDataLogger('BTC'),
+        'ETH': BinanceDataLogger('ETH')
+    }
+    
+    try:
+        await _run_binance_ws(url, loggers)
+    except asyncio.CancelledError:
+        pass
+    finally:
+        for l in loggers.values():
+            l.flush()
 
 if __name__ == "__main__":
     try:

@@ -1,0 +1,34 @@
+# PolyTrading Phase 2: Data-as-a-Service (DaaS) Architecture
+
+This document tracks the evolution of the PolyTrading engine from a private data hoarder into a commercial tier, multi-exchange data distribution pipeline.
+
+## ✅ Phase 1: Core Engine Integration (Completed)
+
+- [x] Establish isolated Polymarket CLOB WebSocket parsers (`1h`, `15m`, `5m`)
+- [x] Establish high-frequency Binance Spot Oracle pipeline
+- [x] Configure Pandas DataFrames to batch Parquet binary arrays (60s flush)
+- [x] Build `collector.py` `rich` TUI Dashboard with global `shared_state` memory
+- [x] Refactor architecture into a 24/7 headless background daemon loop
+- [x] Implement Watchdog TCP-Ghost timeouts and Exponential Backoff network recovery
+- [x] Deploy to Hetzner Ubuntu Cloud Server via Git mapping
+- [x] Write `s3_uploader.py` logic to backup Parquets into AWS S3 cleanly
+- [x] Schedule Linux `crontab` to trigger nightly AWS dumps & local storage formatting
+
+## 🚧 Phase 2: Ensuring Commercial Resiliency
+
+To sell this data, we must eliminate all drop-outs caused by Polymarket's Gamma API and guarantee perfectly stitched, 100% uptime coverage.
+
+- [ ] Implement an L2 "Hard Reset" Snapshot protocol on WebSocket reconnects
+- [ ] Add a REST API fallback logic (cache last known Slugs if Node.js Gamma drops)
+- [ ] Migrate `s3_uploader.py` from AWS S3 to **Cloudflare R2** to eliminate Client Egress fees
+- [ ] Stand up a secondary Hetzner worker node in an isolated geographic region (USA vs EU)
+- [ ] Write a secondary deduplication script to merge dual/redundant Parquets daily
+
+## 🔭 Phase 3: The Product Offering (Kalshi Integration)
+
+To command high subscription premiums, the data must encompass the entire prediction market ecosystem, unified into a single predictable format.
+
+- [ ] Build a `kalshi_logger.py` WebSocket daemon mirroring the Polymarket logic
+- [ ] Architect a "Normalization Layer" translating Polymarket and Kalshi JSONs into an identical Parquet Column Schema
+- [ ] Modify the TUI Dashboard `collector.py` to display concurrent Kalshi data ingestion rates
+- [ ] Establish a simple Python API Gateway to generate short-lived, secure Pre-Signed Cloudflare R2 download links for paying customers
