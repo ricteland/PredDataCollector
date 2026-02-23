@@ -68,30 +68,35 @@ class DataLogger:
         time_suffix = now.strftime("%H_%M_%S")
 
         base_dir = f"data/{self.coin}/{self.timeframe}/{self.market_slug}/{date_folder}"
-        os.makedirs(base_dir, exist_ok=True)
+        
+        try:
+            os.makedirs(base_dir, exist_ok=True)
+            flushed = False
 
-        flushed = False
+            if self.trades_buffer:
+                df = pd.DataFrame(self.trades_buffer)
+                df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms', utc=True)
+                df.to_parquet(f"{base_dir}/{time_suffix}_trades.parquet", index=False)
+                self.trades_buffer.clear()
+                flushed = True
 
-        if self.trades_buffer:
-            df = pd.DataFrame(self.trades_buffer)
-            df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms', utc=True)
-            df.to_parquet(f"{base_dir}/{time_suffix}_trades.parquet", index=False)
-            self.trades_buffer.clear()
-            flushed = True
+            if self.snapshots_buffer:
+                df = pd.DataFrame(self.snapshots_buffer)
+                df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms', utc=True)
+                df.to_parquet(f"{base_dir}/{time_suffix}_snapshots.parquet", index=False)
+                self.snapshots_buffer.clear()
+                flushed = True
 
-        if self.snapshots_buffer:
-            df = pd.DataFrame(self.snapshots_buffer)
-            df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms', utc=True)
-            df.to_parquet(f"{base_dir}/{time_suffix}_snapshots.parquet", index=False)
-            self.snapshots_buffer.clear()
-            flushed = True
+            if self.ticks_buffer:
+                df = pd.DataFrame(self.ticks_buffer)
+                df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms', utc=True)
+                df.to_parquet(f"{base_dir}/{time_suffix}_ticks.parquet", index=False)
+                self.ticks_buffer.clear()
+                flushed = True
 
-        if self.ticks_buffer:
-            df = pd.DataFrame(self.ticks_buffer)
-            df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms', utc=True)
-            df.to_parquet(f"{base_dir}/{time_suffix}_ticks.parquet", index=False)
-            self.ticks_buffer.clear()
-            flushed = True
+        except Exception as e:
+            # Prevent the daemon from crashing if S3 script deleted the directory mid-write
+            pass
 
         self.last_flush = time.time()
         shared_state.state['next_flush_time'] = self.last_flush + self.flush_interval

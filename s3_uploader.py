@@ -65,16 +65,6 @@ def upload_and_cleanup():
                 except Exception as e:
                     print(f"[ERROR] Unexpected error processing {local_path}: {e}")
 
-    # Clean up empty directories left behind
-    for root, dirs, files in os.walk(DATA_DIR, topdown=False):
-        for name in dirs:
-            dir_path = os.path.join(root, name)
-            try:
-                if not os.listdir(dir_path): # if empty
-                    os.rmdir(dir_path)
-            except Exception:
-                pass
-
     print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Nightly job complete. Uploaded {upload_count} files, deleted {delete_count} files locally. Skipped {skip_count} active files.")
 
 if __name__ == "__main__":

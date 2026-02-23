@@ -46,23 +46,27 @@ class BinanceDataLogger:
         time_suffix = now.strftime("%H_%M_%S")
 
         base_dir = f"data/{self.coin}/SPOT/{date_folder}"
-        os.makedirs(base_dir, exist_ok=True)
+        
+        try:
+            os.makedirs(base_dir, exist_ok=True)
+            flushed = False
 
-        flushed = False
+            if self.trades_buffer:
+                df = pd.DataFrame(self.trades_buffer)
+                df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms', utc=True)
+                df.to_parquet(f"{base_dir}/{time_suffix}_trades.parquet", index=False)
+                self.trades_buffer.clear()
+                flushed = True
 
-        if self.trades_buffer:
-            df = pd.DataFrame(self.trades_buffer)
-            df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms', utc=True)
-            df.to_parquet(f"{base_dir}/{time_suffix}_trades.parquet", index=False)
-            self.trades_buffer.clear()
-            flushed = True
-
-        if self.ticks_buffer:
-            df = pd.DataFrame(self.ticks_buffer)
-            df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms', utc=True)
-            df.to_parquet(f"{base_dir}/{time_suffix}_ticks.parquet", index=False)
-            self.ticks_buffer.clear()
-            flushed = True
+            if self.ticks_buffer:
+                df = pd.DataFrame(self.ticks_buffer)
+                df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms', utc=True)
+                df.to_parquet(f"{base_dir}/{time_suffix}_ticks.parquet", index=False)
+                self.ticks_buffer.clear()
+                flushed = True
+        except Exception as e:
+            # Trap silent OS errors if the backup cron deleted the directory during flush
+            pass
 
         self.last_flush = time.time()
         shared_state.state['next_flush_time'] = self.last_flush + self.flush_interval
