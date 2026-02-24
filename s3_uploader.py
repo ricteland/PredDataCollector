@@ -1,6 +1,7 @@
 import os
 import boto3
 import time
+import datetime
 from botocore.exceptions import ClientError
 from pathlib import Path
 
@@ -30,7 +31,11 @@ def upload_and_cleanup():
     upload_count = 0
     delete_count = 0
     skip_count = 0
-    now = time.time()
+    
+    # Calculate exactly 'yesterday'
+    today = datetime.date.today()
+    yesterday = today - datetime.timedelta(days=1)
+    print(f"[INFO] Targeting files modified on: {yesterday}")
 
     # Walk through the entire data directory recursively
     for root, dirs, files in os.walk(DATA_DIR):
@@ -38,9 +43,12 @@ def upload_and_cleanup():
             if file.endswith(".parquet"):
                 local_path = os.path.join(root, file)
                 
-                # Check if file was modified in the last 5 minutes (300 seconds)
-                if now - os.path.getmtime(local_path) < 300:
-                    print(f"[SKIPPED] Active file still being written: {file}")
+                # Get local modification date
+                mtime = os.path.getmtime(local_path)
+                file_date = datetime.date.fromtimestamp(mtime)
+                
+                # ONLY flush if the file was modified yesterday
+                if file_date != yesterday:
                     skip_count += 1
                     continue
                 
