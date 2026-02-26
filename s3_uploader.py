@@ -43,21 +43,20 @@ def upload_and_cleanup():
             if file.endswith(".parquet"):
                 local_path = os.path.join(root, file)
                 
-                # Get local modification date
-                mtime = os.path.getmtime(local_path)
-                file_date = datetime.date.fromtimestamp(mtime)
-                
-                # ONLY flush if the file was modified yesterday
-                if file_date != yesterday:
-                    skip_count += 1
-                    continue
-                
-                # Create the S3 object key (maintaining the exact folder structure)
-                # Example: data/BTC/15m/... -> BTC/15m/...
-                rel_path = os.path.relpath(local_path, DATA_DIR)
-                s3_key = rel_path.replace("\\", "/") # Ensure clean paths
-                
                 try:
+                    # Get local modification date (can throw FileNotFoundError if deleted concurrently)
+                    mtime = os.path.getmtime(local_path)
+                    file_date = datetime.date.fromtimestamp(mtime)
+                    
+                    # ONLY flush if the file was modified yesterday
+                    if file_date != yesterday:
+                        skip_count += 1
+                        continue
+                    
+                    # Create the S3 object key (maintaining the exact folder structure)
+                    rel_path = os.path.relpath(local_path, DATA_DIR)
+                    s3_key = rel_path.replace("\\", "/") # Ensure clean paths
+                    
                     # Upload the Parquet file to S3
                     s3_client.upload_file(local_path, S3_BUCKET_NAME, s3_key)
                     print(f"[UPLOADED] {s3_key}")
@@ -67,7 +66,9 @@ def upload_and_cleanup():
                     os.remove(local_path)
                     print(f"[DELETED LOCAL] {local_path}")
                     delete_count += 1
-                    
+                        
+                except FileNotFoundError:
+                    print(f"[WARN] File disappeared during processing (concurrent delete?): {local_path}")
                 except ClientError as e:
                     print(f"[ERROR] Failed to upload {local_path}: {e}")
                 except Exception as e:

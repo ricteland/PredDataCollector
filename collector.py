@@ -21,8 +21,11 @@ def get_dir_size(path='data'):
     for dirpath, dirnames, filenames in os.walk(path):
         for f in filenames:
             fp = os.path.join(dirpath, f)
-            if not os.path.islink(fp):
-                total += os.path.getsize(fp)
+            try:
+                if not os.path.islink(fp):
+                    total += os.path.getsize(fp)
+            except OSError:
+                pass
     # Return size in Megabytes
     return total / (1024 * 1024)
 
