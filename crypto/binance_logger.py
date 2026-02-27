@@ -1,11 +1,20 @@
 import json
 import os
+import sys
 import asyncio
 import websockets
 import datetime
 import time
 import pandas as pd
+
+# ── Allow running directly as `python crypto/binance_logger.py` ─────────────
+_HERE = os.path.dirname(os.path.abspath(__file__))
+_ROOT = os.path.dirname(_HERE)
+sys.path.insert(0, _HERE)
+
 import shared_state
+
+DATA_DIR = os.path.join(_ROOT, "data")
 
 class BinanceDataLogger:
     def __init__(self, coin):
@@ -16,7 +25,6 @@ class BinanceDataLogger:
         self.flush_interval = 30 # seconds
 
     def add_trade(self, timestamp, price, size, is_buyer_maker):
-        # In Binance, if the buyer is the maker, the taker (aggressor) was selling.
         side = 'SELL' if is_buyer_maker else 'BUY' 
         self.trades_buffer.append({
             'timestamp': float(timestamp),
@@ -45,32 +53,27 @@ class BinanceDataLogger:
         date_folder = now.strftime("%Y-%m-%d")
         time_suffix = now.strftime("%H_%M_%S")
 
-        base_dir = f"data/{self.coin}/SPOT/{date_folder}"
+        base_dir = os.path.join(DATA_DIR, self.coin, "SPOT", date_folder)
         
         try:
             os.makedirs(base_dir, exist_ok=True)
-            flushed = False
 
             if self.trades_buffer:
                 df = pd.DataFrame(self.trades_buffer)
                 df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms', utc=True)
-                df.to_parquet(f"{base_dir}/{time_suffix}_trades.parquet", index=False)
+                df.to_parquet(os.path.join(base_dir, f"{time_suffix}_trades.parquet"), index=False)
                 self.trades_buffer.clear()
-                flushed = True
 
             if self.ticks_buffer:
                 df = pd.DataFrame(self.ticks_buffer)
                 df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms', utc=True)
-                df.to_parquet(f"{base_dir}/{time_suffix}_ticks.parquet", index=False)
+                df.to_parquet(os.path.join(base_dir, f"{time_suffix}_ticks.parquet"), index=False)
                 self.ticks_buffer.clear()
-                flushed = True
-        except Exception as e:
-            # Trap silent OS errors if the backup cron deleted the directory during flush
+        except Exception:
             pass
 
         self.last_flush = time.time()
         shared_state.state['next_flush_time'] = self.last_flush + self.flush_interval
-        # Removed the print statement as requested.
 
 async def _run_binance_ws(url, loggers):
     backoff = 3
@@ -84,7 +87,6 @@ async def _run_binance_ws(url, loggers):
                     data = json.loads(response)
                     last_data_time = time.time()
                     
-                    # Binance streams provide the symbol in 's'
                     stream_symbol = data.get('s', '')
                     coin = 'BTC' if 'BTC' in stream_symbol else 'ETH' if 'ETH' in stream_symbol else None
                     if not coin:
@@ -92,26 +94,19 @@ async def _run_binance_ws(url, loggers):
                         
                     logger = loggers[coin]
                     
-                    # 1. Executed Trades (aggTrade)
                     if data.get('e') == 'aggTrade':
-                        timestamp = data.get('E')  # Event time
+                        timestamp = data.get('E')
                         price = data.get('p')
                         size = data.get('q')
                         is_buyer_maker = data.get('m')
-                        
                         logger.add_trade(timestamp, price, size, is_buyer_maker)
                         
-                    # 2. Incremental Top of Book updates (bookTicker)
                     elif 'u' in data and 'b' in data and 'a' in data:
-                        # @bookTicker payloads do not contain a millisecond server timestamp 'E' by default
-                        # We use the local precise time so it correlates securely with the loop
                         local_ms_timestamp = time.time() * 1000
-                        
                         best_bid = data.get('b')
                         best_bid_size = data.get('B')
                         best_ask = data.get('a')
                         best_ask_size = data.get('A')
-                        
                         logger.add_tick(local_ms_timestamp, best_bid, best_bid_size, best_ask, best_ask_size)
                         
                 except asyncio.TimeoutError:
@@ -120,7 +115,6 @@ async def _run_binance_ws(url, loggers):
                 except websockets.exceptions.ConnectionClosed:
                     raise
                 
-                # Check 60-second flush logic
                 for l in loggers.values():
                     l.flush_if_needed()
                     

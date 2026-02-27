@@ -18,6 +18,10 @@ import requests
 import pandas as pd
 from pathlib import Path
 
+# ── Allow running directly as `python backfill/verify_backfill.py` ───────────
+_HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, _HERE)
+
 # Import the backfill logic so we can re-trigger it
 from dome_backfill import dome_get, backfill_trades, DATA_DIR, DOME_API_KEY
 

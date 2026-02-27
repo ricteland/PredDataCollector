@@ -9,7 +9,8 @@ from pathlib import Path
 AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
 S3_BUCKET_NAME = os.getenv('S3_BUCKET_NAME')
-DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
+_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA_DIR = os.path.join(_ROOT, "data")
 
 def upload_and_cleanup():
     if not all([AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, S3_BUCKET_NAME]):

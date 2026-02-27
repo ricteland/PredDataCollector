@@ -23,7 +23,8 @@ import pandas as pd
 
 DOME_API_KEY = "f2e46c2395d9d74419feea87eae520cafbe44eaa"
 BASE_URL = "https://api.domeapi.io/v1"
-DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
+_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA_DIR = os.path.join(_ROOT, "data")
 RATE_LIMIT_SLEEP = 0.15  # ~7 QPS to stay under the 10 QPS free tier
 
 # How many days back to generate slugs for

@@ -7,43 +7,45 @@ import datetime
 import time
 import pandas as pd
 
-# ── Allow running directly as `python crypto/ws_client.py` ──────────────────
+# ── Allow running directly as `python weather/weather_ws_client.py` ──────────
 _HERE = os.path.dirname(os.path.abspath(__file__))
 _ROOT = os.path.dirname(_HERE)
 sys.path.insert(0, _HERE)
 
-import shared_state
+import weather_shared_state
 
-# Project-root-relative data directory
-DATA_DIR = os.path.join(_ROOT, "data")
+DATA_DIR = os.path.join(_ROOT, "data", "weather")
 
 class DataLogger:
-    def __init__(self, coin, timeframe, market_slug, end_date):
-        self.coin = coin
-        self.timeframe = timeframe
+    def __init__(self, city, target_date, condition_id, market_slug, end_date):
+        self.city = city
+        self.target_date = target_date
+        self.condition_id = condition_id
         self.market_slug = market_slug
         self.end_date = end_date
         self.trades_buffer = []
         self.snapshots_buffer = []
         self.ticks_buffer = []
         self.last_flush = time.time()
-        self.flush_interval = 30 # seconds
+        self.flush_interval = 30
 
     def add_snapshot(self, timestamp, asset_id, bids, asks):
         self.snapshots_buffer.append({
             'timestamp': float(timestamp) if timestamp else 0,
             'market_slug': self.market_slug,
+            'condition_id': self.condition_id,
             'asset_id': asset_id,
             'bids': json.dumps(bids),
             'asks': json.dumps(asks),
             'end_date': self.end_date
         })
-        shared_state.state['polymarket_snapshots'] += 1
+        weather_shared_state.state['polymarket_snapshots'] += 1
 
     def add_tick(self, timestamp, asset_id, price, size, side, best_bid, best_ask):
         self.ticks_buffer.append({
             'timestamp': float(timestamp) if timestamp else 0,
             'market_slug': self.market_slug,
+            'condition_id': self.condition_id,
             'asset_id': asset_id,
             'price': float(price),
             'size': float(size),
@@ -51,21 +53,22 @@ class DataLogger:
             'best_bid': float(best_bid) if best_bid != 'N/A' else None,
             'best_ask': float(best_ask) if best_ask != 'N/A' else None
         })
-        shared_state.state['polymarket_ticks'] += 1
+        weather_shared_state.state['polymarket_ticks'] += 1
 
     def add_trade(self, timestamp, asset_id, price, size, side):
         self.trades_buffer.append({
             'timestamp': float(timestamp) if timestamp else 0,
             'market_slug': self.market_slug,
+            'condition_id': self.condition_id,
             'asset_id': asset_id,
             'price': float(price),
             'size': float(size),
             'side': side,
             'end_date': self.end_date
         })
-        shared_state.state['polymarket_trades'] += 1
-        if self.market_slug in shared_state.state['markets']:
-            shared_state.state['markets'][self.market_slug]['trades'] += 1
+        weather_shared_state.state['polymarket_trades'] += 1
+        if self.condition_id in weather_shared_state.state['markets']:
+            weather_shared_state.state['markets'][self.condition_id]['trades'] += 1
 
     def flush_if_needed(self):
         if time.time() - self.last_flush >= self.flush_interval:
@@ -73,150 +76,117 @@ class DataLogger:
 
     def flush(self):
         now = datetime.datetime.now(datetime.timezone.utc)
-        date_folder = now.strftime("%Y-%m-%d")
         time_suffix = now.strftime("%H_%M_%S")
 
-        base_dir = os.path.join(DATA_DIR, self.coin, self.timeframe, self.market_slug, date_folder)
+        base_dir = os.path.join(DATA_DIR, self.city, self.target_date, self.condition_id)
         
         try:
             os.makedirs(base_dir, exist_ok=True)
-            flushed = False
 
             if self.trades_buffer:
                 df = pd.DataFrame(self.trades_buffer)
                 df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms', utc=True)
                 df.to_parquet(os.path.join(base_dir, f"{time_suffix}_trades.parquet"), index=False)
                 self.trades_buffer.clear()
-                flushed = True
 
             if self.snapshots_buffer:
                 df = pd.DataFrame(self.snapshots_buffer)
                 df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms', utc=True)
                 df.to_parquet(os.path.join(base_dir, f"{time_suffix}_snapshots.parquet"), index=False)
                 self.snapshots_buffer.clear()
-                flushed = True
 
             if self.ticks_buffer:
                 df = pd.DataFrame(self.ticks_buffer)
                 df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms', utc=True)
                 df.to_parquet(os.path.join(base_dir, f"{time_suffix}_ticks.parquet"), index=False)
                 self.ticks_buffer.clear()
-                flushed = True
 
-        except Exception as e:
+        except Exception:
             pass
 
         self.last_flush = time.time()
-        shared_state.state['next_flush_time'] = self.last_flush + self.flush_interval
+        weather_shared_state.state['next_flush_time'] = self.last_flush + self.flush_interval
 
 # --- Global State ---
-# Maps token_id (string) -> { 'coin', 'timeframe', 'slug', 'side', 'logger' }
 active_tokens = {}
 
 async def update_markets_loop():
-    """Background task to fetch Gamma API tokens every 15 minutes."""
-    fetch_script = os.path.join(_HERE, 'fetch_tokens.js')
-    json_out = os.path.join(_HERE, 'polymarket_data_fetched.json')
+    fetch_script = os.path.join(_HERE, 'fetch_weather_tokens.py')
+    json_out = os.path.join(_HERE, 'weather_data_fetched.json')
     while True:
         try:
             process = await asyncio.create_subprocess_shell(
-                f'node "{fetch_script}"',
+                f'python "{fetch_script}"',
                 stdout=asyncio.subprocess.PIPE, 
                 stderr=asyncio.subprocess.PIPE)
             try:
-                await asyncio.wait_for(process.communicate(), timeout=30.0)
+                await asyncio.wait_for(process.communicate(), timeout=60.0)
             except asyncio.TimeoutError:
                 process.kill()
                 await process.communicate()
-                raise Exception("Node API Zombie Timeout")
             
             if os.path.exists(json_out):
                 with open(json_out, 'r', encoding='utf-8') as f:
                     data = json.load(f)
                     update_global_routing(data)
             
-        except Exception as e:
+        except Exception:
             pass
             
-        await asyncio.sleep(15 * 60) # Wait 15 minutes
+        await asyncio.sleep(15 * 60)
 
 
 def update_global_routing(data):
-    """Parses the JSON and specifically tracks sliding windows for BTC/ETH out of all events."""
     global active_tokens
     
-    old_loggers = { meta['slug']: meta['logger'] for meta in active_tokens.values() }
+    old_loggers = { meta['condition_id']: meta['logger'] for meta in active_tokens.values() }
     new_active_tokens = {}
     
-    now_utc = datetime.datetime.now(datetime.timezone.utc)
-    configs = {
-        '1h': 2,    # Current + Next 1
-        '15m': 2,   # Current + Next 1
-        '5m': 4     # Current + Next 3
-    }
-
-    tracked_slugs = []
-
-    for coin in ['BTC', 'ETH']:
-        coin_data = data.get('markets', {}).get(coin, {})
+    tracked_cids = []
+    events = data.get('events', [])
+    for ev in events:
+        city = ev.get('city')
+        target_date = ev.get('date')
+        market_slug = ev.get('market_slug')
+        condition_id = ev.get('condition_id')
+        question = ev.get('question', '')
+        end_date = ev.get('end_date')
+        tokens = ev.get('tokens', {})
         
-        for tf, limit in configs.items():
-            events = coin_data.get(tf, {}).get('events', [])
-            
-            future_events = []
-            for ev in events:
-                end_str = ev.get('end_date')
-                if not end_str: continue
-                try:
-                    dt_str = end_str.replace('Z', '+00:00')
-                    end_dt = datetime.datetime.fromisoformat(dt_str)
-                    if end_dt > now_utc:
-                        future_events.append((end_dt, ev))
-                except:
-                    continue
-                    
-            future_events.sort(key=lambda x: x[0])
-            active_slice = future_events[:limit]
-            
-            for _, ev in active_slice:
-                slug = ev.get('event_slug')
-                end_date = ev.get('end_date')
-                tokens = ev.get('tokens', {})
+        yes_obj = tokens.get('yes')
+        no_obj = tokens.get('no')
+        if not yes_obj or not no_obj: continue
+        
+        logger = old_loggers.get(condition_id, DataLogger(city, target_date, condition_id, market_slug, end_date))
+        
+        new_active_tokens[yes_obj['token_id']] = {
+            'city': city, 'condition_id': condition_id, 'side': 'YES', 'logger': logger
+        }
+        new_active_tokens[no_obj['token_id']] = {
+            'city': city, 'condition_id': condition_id, 'side': 'NO', 'logger': logger
+        }
+        tracked_cids.append(condition_id)
+        
+        if condition_id not in weather_shared_state.state['markets']:
+            weather_shared_state.state['markets'][condition_id] = {
+                'city': city,
+                'question': question,
+                'end_date': end_date,
+                'trades': 0
+            }
                 
-                yes_obj = tokens.get('yes') or tokens.get('up')
-                no_obj = tokens.get('no') or tokens.get('down')
-                if not yes_obj or not no_obj: continue
-                
-                logger = old_loggers.get(slug, DataLogger(coin, tf, slug, end_date))
-                
-                new_active_tokens[yes_obj['token_id']] = {
-                    'coin': coin, 'timeframe': tf, 'slug': slug, 'side': 'YES', 'logger': logger
-                }
-                new_active_tokens[no_obj['token_id']] = {
-                    'coin': coin, 'timeframe': tf, 'slug': slug, 'side': 'NO', 'logger': logger
-                }
-                tracked_slugs.append(slug)
-                
-                if slug not in shared_state.state['markets']:
-                    shared_state.state['markets'][slug] = {
-                        'coin': coin,
-                        'timeframe': tf,
-                        'end_date': end_date,
-                        'trades': logger.trades_buffer.__len__() if logger else 0
-                    }
-                
-    active_slugs_set = set(tracked_slugs)
-    keys_to_remove = [s for s in shared_state.state['markets'].keys() if s not in active_slugs_set]
+    active_cid_set = set(tracked_cids)
+    keys_to_remove = [s for s in weather_shared_state.state['markets'].keys() if s not in active_cid_set]
     for s in keys_to_remove:
-        del shared_state.state['markets'][s]
+        del weather_shared_state.state['markets'][s]
         
     for token_id, meta in active_tokens.items():
         if token_id not in new_active_tokens:
              meta['logger'].flush()
              
     active_tokens = new_active_tokens
-    shared_state.state['slugs_active'] = len(active_slugs_set)
-    shared_state.state['next_slug_update'] = time.time() + 900
+    weather_shared_state.state['slugs_active'] = len(active_cid_set)
+    weather_shared_state.state['next_slug_update'] = time.time() + 900
 
 
 async def subscribe_and_listen():
@@ -248,7 +218,7 @@ async def subscribe_and_listen():
                         process_ws_message(data)
                 except asyncio.TimeoutError:
                     if time.time() - last_data_time > 60:
-                        raise Exception("Watchdog timeout - No data for 60s")
+                        raise Exception("Watchdog timeout")
                 except websockets.exceptions.ConnectionClosed:
                     raise
                 
@@ -290,19 +260,16 @@ def process_ws_message(msg):
             c_asset = change.get('asset_id')
             meta = active_tokens.get(c_asset)
             if not meta: continue
-            
             price = change.get('price')
             size = change.get('size')
             side = change.get('side')
             best_bid = change.get('best_bid', 'N/A')
             best_ask = change.get('best_ask', 'N/A')
-            
             meta['logger'].add_tick(server_time, c_asset, price, size, side, best_bid, best_ask)
 
     elif event_type == 'last_trade_price':
         meta = active_tokens.get(asset_id)
         if not meta: return
-        
         price = msg.get('price')
         size = msg.get('size')
         side = msg.get('side', 'UNKNOWN')
@@ -311,9 +278,6 @@ def process_ws_message(msg):
 
 
 async def main_daemon():
-    print("\nStarting Polymarket Multi-Market Continuous Daemon...")
-    print("Tracking 1h (2), 15m (2), and 5m (4) resolving markets for BTC and ETH.\n")
-    
     fetcher_task = asyncio.create_task(update_markets_loop())
     
     while not active_tokens:

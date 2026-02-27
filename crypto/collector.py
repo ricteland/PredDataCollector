@@ -1,5 +1,6 @@
 import asyncio
 import os
+import sys
 import time
 from rich.live import Live
 from rich.table import Table
@@ -8,17 +9,26 @@ from rich.panel import Panel
 from rich.layout import Layout
 from rich import box
 
+# ── Allow running directly as `python crypto/collector.py` ──────────────────
+_HERE = os.path.dirname(os.path.abspath(__file__))
+_ROOT = os.path.dirname(_HERE)
+sys.path.insert(0, _HERE)
+
 import shared_state
 from ws_client import main_daemon
 from binance_logger import binance_ws_loop
 
 console = Console()
 
-def get_dir_size(path='data'):
+def get_dir_size(path=None):
+    if path is None:
+        path = os.path.join(_ROOT, 'data')
     total = 0
     if not os.path.exists(path):
         return 0
     for dirpath, dirnames, filenames in os.walk(path):
+        # Exclude weather data from crypto dashboard
+        dirnames[:] = [d for d in dirnames if d != 'weather']
         for f in filenames:
             fp = os.path.join(dirpath, f)
             try:
@@ -26,12 +36,10 @@ def get_dir_size(path='data'):
                     total += os.path.getsize(fp)
             except OSError:
                 pass
-    # Return size in Megabytes
     return total / (1024 * 1024)
 
 def generate_dashboard() -> Layout:
-    # 1. Background Metrics Updates
-    mb_saved = get_dir_size('data')
+    mb_saved = get_dir_size()
     shared_state.state['mb_saved'] = mb_saved
     
     now = time.time()
@@ -43,7 +51,6 @@ def generate_dashboard() -> Layout:
     minutes, seconds = divmod(remainder, 60)
     uptime_fmt = f"{hours:02d}:{minutes:02d}:{seconds:02d}"
 
-    # 2. Rich Layout Scaffolding
     layout = Layout()
     layout.split_column(
         Layout(name="header", size=3),
@@ -51,7 +58,6 @@ def generate_dashboard() -> Layout:
         Layout(name="markets")
     )
 
-    # 3. Header Segment
     header_table = Table(show_header=False, expand=True, box=None)
     header_table.add_column("1", justify="left")
     header_table.add_column("2", justify="center")
@@ -64,7 +70,6 @@ def generate_dashboard() -> Layout:
     )
     layout["header"].update(Panel(header_table))
     
-    # 4. Body Metrics Table
     body_table = Table(expand=True, box=box.ROUNDED)
     body_table.add_column("Pipeline Metric", style="cyan", no_wrap=True)
     body_table.add_column("Buffer Yield", justify="right", style="green")
@@ -82,7 +87,6 @@ def generate_dashboard() -> Layout:
 
     layout["metrics"].update(Panel(body_table, title="[bold]Concurrent Telemetry Mappings[/bold]"))
     
-    # 5. Active Markets Table
     market_table = Table(expand=True, box=box.ROUNDED)
     market_table.add_column("Coin", justify="center", style="yellow")
     market_table.add_column("TF", justify="center", style="magenta")
@@ -104,18 +108,14 @@ def generate_dashboard() -> Layout:
     return layout
 
 async def ui_loop():
-    # Renders the exact UI overlay twice a second indefinitely
     with Live(generate_dashboard(), console=console, refresh_per_second=2, screen=True) as live:
         while True:
             await asyncio.sleep(0.5)
             live.update(generate_dashboard())
 
 async def run_orchestration():
-    # 1. Background daemon pulling active CLOB levels
     task_clob = asyncio.create_task(main_daemon())
-    # 2. Background daemon pulling Spot executions
     task_spot = asyncio.create_task(binance_ws_loop())
-    # 3. Foreground visualization rendering shared telemetry
     task_ui = asyncio.create_task(ui_loop())
     
     try:
@@ -127,6 +127,5 @@ if __name__ == "__main__":
     try:
         asyncio.run(run_orchestration())
     except KeyboardInterrupt:
-        # Avoid messy asyncio cancellation tracebacks and alert user of graceful save
         console.print("\n[bold green]Initiating Graceful Shutdown...[/bold green]")
         console.print("[yellow]Saving all active memory buffers to Parquet files safely.[/yellow]")

@@ -19,11 +19,12 @@ import pandas as pd
 DOME_API_KEY = os.environ.get("DOME_API_KEY", "f2e46c2395d9d74419feea87eae520cafbe44eaa")
 BASE_URL = "https://api.domeapi.io/v1"
 GAMMA_URL = "https://gamma-api.polymarket.com/events"
-DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "weather")
+_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA_DIR = os.path.join(_ROOT, "data", "weather")
 RATE_LIMIT_SLEEP = 0.15  # ~7 QPS to stay under the 10 QPS free tier
 
 # How many days back to generate slugs for
-DAYS_BACK = 90
+DAYS_BACK = 120
 
 CITIES = [
     "london", "seoul", "nyc", "toronto", "wellington", 
@@ -191,6 +192,25 @@ def discover_weather_markets(cities, days_back):
     print(f"\n[DISCOVERY COMPLETE] Total events: {len(all_events)}")
     return all_events
 
+# ─── Manifest Helper ─────────────────────────────────────────────────────────
+
+def _update_manifest(base_dir, condition_id, question):
+    """Write/update a manifest.json that maps condition_id -> human-readable question."""
+    manifest_path = os.path.join(base_dir, "manifest.json")
+    manifest = {}
+    if os.path.exists(manifest_path):
+        try:
+            with open(manifest_path, "r") as f:
+                manifest = json.load(f)
+        except Exception:
+            pass
+    manifest[condition_id] = question
+    try:
+        with open(manifest_path, "w") as f:
+            json.dump(manifest, f, indent=2)
+    except Exception:
+        pass
+
 # ─── Backfill Candlesticks (OHLCV) ───────────────────────────────────────────
 
 def backfill_candlesticks(city, date_str, bucket):
@@ -248,12 +268,10 @@ def backfill_candlesticks(city, date_str, bucket):
         except Exception:
             pass
             
-    # Clean the bucket question for the filename
-    clean_name = bucket.get("question", "market").replace(" ", "_").replace("/", "").replace(">", "gt").replace("<", "lt").replace("?", "")
+    # Use condition_id for a safe, fixed-length filename
+    cid = bucket.get("condition_id", "unknown")
     base_dir = os.path.join(DATA_DIR, city, date_str, "ohlcv")
-    
-    # Limit filename length
-    filename = f"{clean_name[:50]}_1h.parquet"
+    filename = f"{cid}_1h.parquet"
     out_path = os.path.join(base_dir, filename)
     
     if os.path.exists(out_path):
@@ -262,7 +280,82 @@ def backfill_candlesticks(city, date_str, bucket):
     os.makedirs(base_dir, exist_ok=True)
     df.to_parquet(out_path, index=False)
     
+    # Write/update a manifest mapping condition_id -> human-readable question
+    _update_manifest(base_dir, cid, bucket.get("question", ""))
+    
     return len(all_candles)
+
+# ─── Backfill Trades ─────────────────────────────────────────────────────────
+
+def backfill_trades(city, date_str, bucket):
+    """Download all historical trades for the sub-market bucket."""
+    market_slug = bucket.get("market_slug")
+    cid = bucket.get("condition_id", "unknown")
+    if not market_slug:
+        return 0
+        
+    base_dir = os.path.join(DATA_DIR, city, date_str, "trades")
+    filename = f"{cid}_trades.parquet"
+    out_path = os.path.join(base_dir, filename)
+
+    if os.path.exists(out_path):
+        return -1 # Sentinel for skipped
+        
+    all_trades = []
+    pagination_key = None
+    
+    while True:
+        params = {"market_slug": market_slug, "limit": 1000}
+        if pagination_key:
+            params["pagination_key"] = pagination_key
+        
+        data = dome_get("/polymarket/orders", params)
+        if not data:
+            break
+        
+        orders = data.get("orders", data.get("data", []))
+        if not orders:
+            break
+        
+        for order in orders:
+            all_trades.append({
+                "timestamp": order.get("timestamp", ""),
+                "token_id": order.get("token_id", ""),
+                "token_label": order.get("token_label", ""),
+                "side": order.get("side", ""),
+                "price": float(order.get("price", 0)),
+                "size": float(order.get("shares_normalized", order.get("shares", 0))),
+            })
+        
+        pagination = data.get("pagination", {})
+        next_cursor = pagination.get("pagination_key")
+        has_more = pagination.get("has_more", False)
+        if not next_cursor or next_cursor == pagination_key or not has_more:
+            break
+        pagination_key = next_cursor
+        
+    if not all_trades:
+        return 0
+        
+    df = pd.DataFrame(all_trades)
+    try:
+        # The Dome API usually returns string UNIX timestamps for trades
+        df["timestamp"] = pd.to_numeric(df["timestamp"])
+        df["timestamp"] = pd.to_datetime(df["timestamp"], unit="s", utc=True)
+    except Exception:
+        try:
+            df["timestamp"] = pd.to_datetime(df["timestamp"], unit="ms", utc=True)
+        except Exception:
+            df["timestamp"] = pd.to_datetime(df["timestamp"], utc=True)
+        
+    os.makedirs(base_dir, exist_ok=True)
+    df.to_parquet(out_path, index=False)
+    
+    # Write/update a manifest mapping condition_id -> human-readable question
+    _update_manifest(base_dir, cid, bucket.get("question", ""))
+    
+    return len(all_trades)
+
 
 # ─── Backfill Orderbooks (Fall back / Comprehensive) ─────────────────────────
 
@@ -312,11 +405,10 @@ def backfill_orderbooks(city, date_str, bucket):
     except Exception:
         pass
         
-    # To keep it lightweight and simulated at Top Of Hour, we could resample
-    # But writing raw the full snapshots gives maximum flexibility:
-    clean_name = bucket.get("question", "market").replace(" ", "_").replace("/", "").replace(">", "gt").replace("<", "lt").replace("?", "")
+    # Use condition_id for a safe, fixed-length filename
+    cid = bucket.get("condition_id", "unknown")
     base_dir = os.path.join(DATA_DIR, city, date_str, "orderbook")
-    filename = f"{clean_name[:50]}_snapshots.parquet"
+    filename = f"{cid}_snapshots.parquet"
     out_path = os.path.join(base_dir, filename)
 
     if os.path.exists(out_path):
@@ -324,6 +416,9 @@ def backfill_orderbooks(city, date_str, bucket):
         
     os.makedirs(base_dir, exist_ok=True)
     df.to_parquet(out_path, index=False)
+    
+    # Write/update a manifest mapping condition_id -> human-readable question
+    _update_manifest(base_dir, cid, bucket.get("question", ""))
     
     return len(all_snapshots)
 
@@ -389,8 +484,10 @@ def main():
         
     total_candles = 0
     total_orderbooks = 0
+    total_trades = 0
     skipped_candles = 0
     skipped_orderbooks = 0
+    skipped_trades = 0
     total_buckets = 0
     
     for e in events:
@@ -409,8 +506,17 @@ def main():
             else:
                 total_candles += c
                 c_str = str(c)
+                
+            # 2. Try Trades
+            t = backfill_trades(city, date_str, bucket)
+            if t == -1:
+                skipped_trades += 1
+                t_str = "SKIP"
+            else:
+                total_trades += t
+                t_str = str(t)
             
-            # 2. Try Orderbooks
+            # 3. Try Orderbooks
             o = backfill_orderbooks(city, date_str, bucket)
             if o == -1:
                 skipped_orderbooks += 1
@@ -419,23 +525,18 @@ def main():
                 total_orderbooks += o
                 o_str = str(o)
             
-            print(f"  -> {bucket['question'][:40]}: {c_str} OHLCV | {o_str} Orderbooks")
+            print(f"  -> {bucket['question'][:40]}: {c_str} OHLCV | {t_str} Trades | {o_str} Orderbooks")
 
     print(f"\n{'='*60}")
     print(f"  BACKFILL COMPLETE!")
     print(f"  Events: {len(events)}")
     print(f"  Total Buckets: {total_buckets}")
     print(f"  Candles Saved: {total_candles:,} (Skipped: {skipped_candles})")
+    print(f"  Trades Saved: {total_trades:,} (Skipped: {skipped_trades})")
     print(f"  Orderbook Snaps: {total_orderbooks:,} (Skipped: {skipped_orderbooks})")
     print(f"{'='*60}")
 
-    print(f"\n{'='*60}")
-    print(f"  BACKFILL COMPLETE!")
-    print(f"  Events: {len(events)}")
-    print(f"  Total Buckets: {total_buckets}")
-    print(f"  Candles Saved: {total_candles:,}")
-    print(f"  Orderbook Snaps: {total_orderbooks:,}")
-    print(f"{'='*60}")
+
     
 if __name__ == "__main__":
     main()

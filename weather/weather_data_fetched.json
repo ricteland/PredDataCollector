@@ -1,0 +1,3254 @@
+{
+  "discovered_at": "2026-02-27T18:48:09.505475+00:00",
+  "events": [
+    {
+      "city": "london",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-london-on-february-27-2026",
+      "market_slug": "highest-temperature-in-london-on-february-27-2026-8c",
+      "condition_id": "0xf0e16bcd1ae8a6a7d4e882654c66aabe81713617361d2b89b979ce7ae81f673f",
+      "question": "Will the highest temperature in London be 8\u00b0C on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "99196926325675755948349813442781202221212095421640507964396828271095316876556",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "92879987855894557675281680907810080709574756767983300323173715454416065078063",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "london",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-london-on-february-27-2026",
+      "market_slug": "highest-temperature-in-london-on-february-27-2026-14c",
+      "condition_id": "0x6d526c7f90e0224f03bcc62493075c15dd19ca7f9036e3f4ae0752cb3759cd62",
+      "question": "Will the highest temperature in London be 14\u00b0C on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "21782974288594885293241697793809437046758184353073143683040526374278251771071",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "110335594774271813385612661183860280102809294062710649269338297024486169991579",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "london",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-london-on-february-27-2026",
+      "market_slug": "highest-temperature-in-london-on-february-27-2026-10c",
+      "condition_id": "0xda22872601a590961706a231b25ba311558ae6d0bf26060b510e8e723fa962db",
+      "question": "Will the highest temperature in London be 10\u00b0C on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "83705649994134197969193202751821430170893106395047554706880974979742209410282",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "102840603790022895159111314478688714931699080297751234548468137547840332083773",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "london",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-london-on-february-27-2026",
+      "market_slug": "highest-temperature-in-london-on-february-27-2026-12c",
+      "condition_id": "0xc240f483e69e6194594dd9d3a1c42803bdb5d276ac20949679eea438c1c07f86",
+      "question": "Will the highest temperature in London be 12\u00b0C on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "14357568147285326767971613515685856468359426393310502149802790418206261853719",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "97834161932711610950205226127662118027603634645035185094796404777473974347416",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "london",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-london-on-february-27-2026",
+      "market_slug": "highest-temperature-in-london-on-february-27-2026-15corhigher",
+      "condition_id": "0x3b6f90cb390051bb70614392161b28912a51d8a71ccaadb9911d0f7763eecbc2",
+      "question": "Will the highest temperature in London be 15\u00b0C or higher on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "25933921533473556892074974905198808354025585415653878025581864744588364353328",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "83838053361018430143279521126341409623753850645423927563453845605266593107824",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "london",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-london-on-february-27-2026",
+      "market_slug": "highest-temperature-in-london-on-february-27-2026-7corbelow",
+      "condition_id": "0xb328567e0527ec0d4aedf96730fe720ac85a7b4a2520e355eed66c4fe1d1c262",
+      "question": "Will the highest temperature in London be 7\u00b0C or below on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "10644477068953852228265892790798523256351653807038799057883324163296978917644",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "44892757486697550863741518372538251580878316114719699262970362688518983952961",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "london",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-london-on-february-27-2026",
+      "market_slug": "highest-temperature-in-london-on-february-27-2026-9c",
+      "condition_id": "0x8f8c260d7bf04aed15ea6f1680e5f5d490a339a2799ceae069fde5447611177b",
+      "question": "Will the highest temperature in London be 9\u00b0C on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "46250190229344265298848441386023098745919952920162227785404043371278483280578",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "57182457335132471259030006049587855276185987179794744222504338466417131796859",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "london",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-london-on-february-27-2026",
+      "market_slug": "highest-temperature-in-london-on-february-27-2026-11c",
+      "condition_id": "0x92d8833f2872e164a8d25d81f3a77ee511adcef8f4c0ae99df031b4ff376ef81",
+      "question": "Will the highest temperature in London be 11\u00b0C on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "1021174268542247361226409728687153299384348143777973260214102212315282519074",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "103024114019071381135355424235404140832818287300813762493850624262923208620335",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "london",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-london-on-february-27-2026",
+      "market_slug": "highest-temperature-in-london-on-february-27-2026-13c",
+      "condition_id": "0xd23cf17b0c2705228ecc4964f76d0c813749990cacb1e821bc1ded9820d7dd1f",
+      "question": "Will the highest temperature in London be 13\u00b0C on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "30240934863044181170658867198555292676968712557227136613358354652093268738455",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "34190814102007024411160734615678326721001787644972606676330447838717477866476",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "london",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-london-on-february-28-2026",
+      "market_slug": "highest-temperature-in-london-on-february-28-2026-8corbelow",
+      "condition_id": "0xe1ad64e93cfb661c390413b8aca185816a4fb369f869c11976b5cba818967fd8",
+      "question": "Will the highest temperature in London be 8\u00b0C or below on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "108066643169357588502216678071139360058001378288802385016081335681532093921208",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "24719470826664087164532659909843053579776364795742330252806178360843588858097",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "london",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-london-on-february-28-2026",
+      "market_slug": "highest-temperature-in-london-on-february-28-2026-9c",
+      "condition_id": "0xb13df72c0e34b58e50d0e9a634b130e08a45e3c74fb47db8f0db3adc7db378f6",
+      "question": "Will the highest temperature in London be 9\u00b0C on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "95879374119323891540594887690200060076321540862492794749304118320284757693749",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "60436747556446300609231427842169805993590997175571139632789992526224751971463",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "london",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-london-on-february-28-2026",
+      "market_slug": "highest-temperature-in-london-on-february-28-2026-10c",
+      "condition_id": "0x67b0bc9a65725e19a1dfa87de53fa05637f665be8d403cecc1b391aea959e956",
+      "question": "Will the highest temperature in London be 10\u00b0C on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "36639011966377944795268216805003616763316565598128549337212904656891880766102",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "75644267697559586461901500631026114708365621966641241387255144114909181194608",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "london",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-london-on-february-28-2026",
+      "market_slug": "highest-temperature-in-london-on-february-28-2026-11c",
+      "condition_id": "0xba9347b9ed9b93641547705b6de96d0c756c1d275e051cc0f13e90734c34aa27",
+      "question": "Will the highest temperature in London be 11\u00b0C on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "32856380897051912745832977470746041698276164112872789027956369221188702082642",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "56233972502440298756746355420027269311748232770212533958002344053345354706553",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "london",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-london-on-february-28-2026",
+      "market_slug": "highest-temperature-in-london-on-february-28-2026-12c",
+      "condition_id": "0x65c59f650ee64dc4d77bd0127a198fdc2f6b016fb07eff4f0a0dc1a80f935359",
+      "question": "Will the highest temperature in London be 12\u00b0C on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "37575243268465568610949965667832577371114270016042478744388446254977656942480",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "10793410116876425221333814338977060419649950657058677144533107820230304032867",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "london",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-london-on-february-28-2026",
+      "market_slug": "highest-temperature-in-london-on-february-28-2026-13c",
+      "condition_id": "0x4c214044002134c03e75bb9094101f1a49b1ad4a6acb3398029adf79788ac17d",
+      "question": "Will the highest temperature in London be 13\u00b0C on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "105976950978857809620751032251412532951906639082434061875502724401033776038641",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "38258707798470937888353495209104498385138126149381142897639225534272707858425",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "london",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-london-on-february-28-2026",
+      "market_slug": "highest-temperature-in-london-on-february-28-2026-14c",
+      "condition_id": "0x38d8283457cb0d0072e6c4486ad86edfa66a26c03c0deb2f08c88c703437d7b1",
+      "question": "Will the highest temperature in London be 14\u00b0C on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "13358982771600726003087066351406020963283690218203130261430931382269593703898",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "19783827115397182638099296305829060362947744303846946360639763433312703195368",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "london",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-london-on-february-28-2026",
+      "market_slug": "highest-temperature-in-london-on-february-28-2026-15c",
+      "condition_id": "0x4b4272dce7360966776a528f5964d68438b452ccfa2326fa7b7dd65e6c09977f",
+      "question": "Will the highest temperature in London be 15\u00b0C on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "67674267380289374304687496043771633617584845741709611224951715403035168277748",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "97836716022577166721008367492913645330566616038056908778739638218142400832179",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "london",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-london-on-february-28-2026",
+      "market_slug": "highest-temperature-in-london-on-february-28-2026-16corhigher",
+      "condition_id": "0x3cbaf795560f1f8b039a8fe08280cc7192cbb274e0ea1628d9397c77a44d88cc",
+      "question": "Will the highest temperature in London be 16\u00b0C or higher on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "59322612659386489310193890614036548509085716191967769260929564554609280806635",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "28151122330705048280727001079569146774359996470639939040166416284786929666335",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "seoul",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-seoul-on-february-28-2026",
+      "market_slug": "highest-temperature-in-seoul-on-february-28-2026-6corbelow",
+      "condition_id": "0x4d6835bc44d59de8814cb07b19fb93a5201c6dad35d4d2aa63abc5fc447a895d",
+      "question": "Will the highest temperature in Seoul be 6\u00b0C or below on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "93457609660389195800742905966459313681165550336307255869358697845570710693225",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "17110028411192015665589783523543011590925927420253610715695675598084498396681",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "seoul",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-seoul-on-february-28-2026",
+      "market_slug": "highest-temperature-in-seoul-on-february-28-2026-7c",
+      "condition_id": "0xf37c3e932e56dac8e651a4cf8572cdaebf3988f2f650d493c43c697e901a300f",
+      "question": "Will the highest temperature in Seoul be 7\u00b0C on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "60331571677618410291061318853145410967272612686690615633290523464712928133135",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "62943983453151956118893291940458441544031188639275902083531351166465020113006",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "seoul",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-seoul-on-february-28-2026",
+      "market_slug": "highest-temperature-in-seoul-on-february-28-2026-8c",
+      "condition_id": "0x3dc4468b49683dc6949247818bb9e3fb3f7d745e907501026ac4af96171039a5",
+      "question": "Will the highest temperature in Seoul be 8\u00b0C on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "34276817973111924853808397143249316246091202240717096614020527863684425064391",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "68717975979247306964877631187632751752344980531559733169823553756775653589371",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "seoul",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-seoul-on-february-28-2026",
+      "market_slug": "highest-temperature-in-seoul-on-february-28-2026-9c",
+      "condition_id": "0x58ce4e8e94e7c37fe2aac776c3ebd7324e4597e76e8229698e859718f813b547",
+      "question": "Will the highest temperature in Seoul be 9\u00b0C on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "114439144524741507265657339285075425033026518388221244891693304546127365120562",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "45937779880228630679565774585457641739872894433369049019933662306405614501057",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "seoul",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-seoul-on-february-28-2026",
+      "market_slug": "highest-temperature-in-seoul-on-february-28-2026-10c",
+      "condition_id": "0x1e3d80b0a7d2a7f0db289f1dd76edf719cd5e7080ef8eb49327673c4bf3c820f",
+      "question": "Will the highest temperature in Seoul be 10\u00b0C on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "38887946013786432807920512772430946437659226366558898030217268793332840003550",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "17298098868383605721743264686337986197479000294722926876120678952460224094835",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "seoul",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-seoul-on-february-28-2026",
+      "market_slug": "highest-temperature-in-seoul-on-february-28-2026-11c",
+      "condition_id": "0x5e4821c631b899725299902f30b67a8fbd98a27a7955027fdf16ffd17ccf68a7",
+      "question": "Will the highest temperature in Seoul be 11\u00b0C on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "109149457957452782955434239049247311324907578896213969532762561176578414761877",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "63620781774192943556366360151774855157249649699775459279005132520948639472247",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "seoul",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-seoul-on-february-28-2026",
+      "market_slug": "highest-temperature-in-seoul-on-february-28-2026-12c",
+      "condition_id": "0xdaf40bace378c3f0a759d4c8b5ae0a7016f2a55e0c164ecce3f8ac20cfbdbb39",
+      "question": "Will the highest temperature in Seoul be 12\u00b0C on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "44807012160873104593184700081927760457947184227001884834094573426983475389215",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "19504055102362146937320762122336413272546710744785567196642161363629398523805",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "seoul",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-seoul-on-february-28-2026",
+      "market_slug": "highest-temperature-in-seoul-on-february-28-2026-13c",
+      "condition_id": "0xea2e0dd9aabb3e99a80c1652d14ff73bed5241129c3f0f89ca3b069265cf48b4",
+      "question": "Will the highest temperature in Seoul be 13\u00b0C on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "29583146054639234526365910406215854070667671011320223418241743584815805230323",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "91854824531819466015371840519420045698495143470647332816460139374363148618656",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "seoul",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-seoul-on-february-28-2026",
+      "market_slug": "highest-temperature-in-seoul-on-february-28-2026-14corhigher",
+      "condition_id": "0x9e476c6f4bfbbdb794d2265845a18793011fa0b5478cbe9a61a36cac3e487f3d",
+      "question": "Will the highest temperature in Seoul be 14\u00b0C or higher on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "55001453690945755913495088197845101763591333022350609236628932745227445497551",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "42399902997908193149810254623463546146882308788601864313707637031923938896067",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "nyc",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-nyc-on-february-27-2026",
+      "market_slug": "highest-temperature-in-nyc-on-february-27-2026-39forbelow",
+      "condition_id": "0x3a3db3955ddd25854f5880843265cdf7a2d30249a37a39ce06cc6f7dca03a119",
+      "question": "Will the highest temperature in New York City be 39\u00b0F or below on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "98348467183770676881475415229529739113906099304064779008324462356009896323486",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "4566298190259099532573537136895745359417842220419562379762543528730420325724",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "nyc",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-nyc-on-february-27-2026",
+      "market_slug": "highest-temperature-in-nyc-on-february-27-2026-40-41f",
+      "condition_id": "0x3c27c10d5a5e5a860a1172d0da5d36a092196fec2cc751bdacabc8fa62f358f2",
+      "question": "Will the highest temperature in New York City be between 40-41\u00b0F on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "4767645186354221735125328499773547035273039004911794054905861524064911876731",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "61005383791494067082562791690000697302974942008997226429054795208816879132849",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "nyc",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-nyc-on-february-27-2026",
+      "market_slug": "highest-temperature-in-nyc-on-february-27-2026-42-43f",
+      "condition_id": "0x8c9ee554d71cbbf95632ec238165e6cef601ea78376a5fc8bc0d118dbd1a6fc9",
+      "question": "Will the highest temperature in New York City be between 42-43\u00b0F on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "64405586497779985439727992092269976388148378735773537835193197721198739995753",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "2064881046491057888468390476538248302055306163235134715155333831136992692133",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "nyc",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-nyc-on-february-27-2026",
+      "market_slug": "highest-temperature-in-nyc-on-february-27-2026-44-45f",
+      "condition_id": "0x222edda5d1bb561fe31202f895e94fc2e1b34eabffd93182bfc41ce04f5d4221",
+      "question": "Will the highest temperature in New York City be between 44-45\u00b0F on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "84198789710459493055827692385046307770096468628337984518406379208536596307667",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "99386875643727571576343883601299153471814691442464984394924617478681050543821",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "nyc",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-nyc-on-february-27-2026",
+      "market_slug": "highest-temperature-in-nyc-on-february-27-2026-46-47f",
+      "condition_id": "0xce2c2758448d9ebc750fb6b687dbb1a9510f7bb1336f7a3cc2ce7c84aa654801",
+      "question": "Will the highest temperature in New York City be between 46-47\u00b0F on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "109916196232074332252771731128044731011382232794997296258449011414398426893382",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "14198208360076666170975546590578144021950515381566977870090512599510453775039",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "nyc",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-nyc-on-february-27-2026",
+      "market_slug": "highest-temperature-in-nyc-on-february-27-2026-48-49f",
+      "condition_id": "0x1895d818c3cea083650791d280d2d7e85ba16ccfae79dc6fbccbb6e0fd8300f5",
+      "question": "Will the highest temperature in New York City be between 48-49\u00b0F on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "30623654730009317973455852145933663461117325902080423132004868365311713497477",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "62596346715588308527458334974003644122594130923685621425411846554323611989134",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "nyc",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-nyc-on-february-27-2026",
+      "market_slug": "highest-temperature-in-nyc-on-february-27-2026-50-51f",
+      "condition_id": "0x86087e1632c5ec9a6d101b61b1b375101fbc3040599c8a9e06f8a6577d7f0f47",
+      "question": "Will the highest temperature in New York City be between 50-51\u00b0F on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "11200779763248072639220901923018990850374974228049969901784390471986370594677",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "113108214118502163673255749926537050649778683764314121689312121131466057756022",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "nyc",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-nyc-on-february-27-2026",
+      "market_slug": "highest-temperature-in-nyc-on-february-27-2026-52-53f",
+      "condition_id": "0x36af5f5b40eab74c1bcfcbadeb0acb2bdd97a0fc2e84c6a73d830154fdb9c22d",
+      "question": "Will the highest temperature in New York City be between 52-53\u00b0F on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "102091774766747485256585964276868606660735123697540295606842793023852144322258",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "66675447514925811206354013788329549855059236001897280261058570741284729961181",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "nyc",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-nyc-on-february-27-2026",
+      "market_slug": "highest-temperature-in-nyc-on-february-27-2026-54forhigher",
+      "condition_id": "0x7ee59de361a2a655435a188255840505249d810adeec96beaba7ccf96a113a46",
+      "question": "Will the highest temperature in New York City be 54\u00b0F or higher on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "76865869477382896703455016382640132113080183611303851377408825376552231540226",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "31008302889888194013527412190375028139713912019598408002486754362804706821102",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "nyc",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-nyc-on-february-28-2026",
+      "market_slug": "highest-temperature-in-nyc-on-february-28-2026-35forbelow",
+      "condition_id": "0x5de18db966b26bd9d52881b46e63e892b6b1c2a1b46a15076706bebc73d65dbb",
+      "question": "Will the highest temperature in New York City be 35\u00b0F or below on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "63291830045555713427843903467391032287028394408304712509433857012951894425222",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "100514052441675960522973350221870094877867946972317662170656794474456228171847",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "nyc",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-nyc-on-february-28-2026",
+      "market_slug": "highest-temperature-in-nyc-on-february-28-2026-36-37f",
+      "condition_id": "0xdf818a2d3e72471f78f00fe103e13a0b707a691f286a147e21ead2d6ef7070eb",
+      "question": "Will the highest temperature in New York City be between 36-37\u00b0F on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "103555238421388361524215122305565267520933166857402403869415129147138278694493",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "863974738560552913762019535411011368950716877625787217873491013333514138866",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "nyc",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-nyc-on-february-28-2026",
+      "market_slug": "highest-temperature-in-nyc-on-february-28-2026-38-39f",
+      "condition_id": "0x95949945fc504bd8c0f594c09dc830bdf71d3fbc87ccfd15abaca84fe2489103",
+      "question": "Will the highest temperature in New York City be between 38-39\u00b0F on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "96964338167367362059578438328007640795317400926023883430173589008959576013847",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "105124292075592844406632284273987034303489831295006854816974707769309570331973",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "nyc",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-nyc-on-february-28-2026",
+      "market_slug": "highest-temperature-in-nyc-on-february-28-2026-40-41f",
+      "condition_id": "0x43b96b3da11d6dd2f7fef729d68c933512fbd5a604d15a8745c99184f8950492",
+      "question": "Will the highest temperature in New York City be between 40-41\u00b0F on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "41925947827506579001762631307497187936331183549991632362888280528404325918504",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "10222336573534196281394403862352546902418836488738520167670395528311376115548",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "nyc",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-nyc-on-february-28-2026",
+      "market_slug": "highest-temperature-in-nyc-on-february-28-2026-42-43f",
+      "condition_id": "0x73fd6311f36a78c6fa357f103895565877466fd7c2518f230d07131d5c2608dd",
+      "question": "Will the highest temperature in New York City be between 42-43\u00b0F on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "23546688255363308219992679821662447316246562680561185655395776413523034372278",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "70853800075290939094600672179556699101982344105514794895353888116303053386144",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "nyc",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-nyc-on-february-28-2026",
+      "market_slug": "highest-temperature-in-nyc-on-february-28-2026-44-45f",
+      "condition_id": "0x44a8edf2a3a2f27038d1afcc01752ad4f3d7e1d751a054bfa7edb011e2e8de4f",
+      "question": "Will the highest temperature in New York City be between 44-45\u00b0F on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "105802896907100360041873752791383256056380078393770095831283497063385596988881",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "29723769572403899817561456245689441569530769851881112310173101603832355025709",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "nyc",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-nyc-on-february-28-2026",
+      "market_slug": "highest-temperature-in-nyc-on-february-28-2026-46-47f",
+      "condition_id": "0xde6c7ba738adf63fa36749f6c9620d12cf1736bd7964d294de44d7461dcc530d",
+      "question": "Will the highest temperature in New York City be between 46-47\u00b0F on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "24209696964068328009460107603966694638758516197202821880344189759523700176981",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "11409407489315633552384095590855418612856974891327710920052118579229403725493",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "nyc",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-nyc-on-february-28-2026",
+      "market_slug": "highest-temperature-in-nyc-on-february-28-2026-48-49f",
+      "condition_id": "0x65ccc9319c8df695e425e0ab4501776a7887abba8fa7382fc1cee3af08bf9036",
+      "question": "Will the highest temperature in New York City be between 48-49\u00b0F on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "95189329975479593949058843524306046922964708754210649592799474557057685657109",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "59441158237009171926012814693773521446897006967475220260816502683282965667615",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "nyc",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-nyc-on-february-28-2026",
+      "market_slug": "highest-temperature-in-nyc-on-february-28-2026-50forhigher",
+      "condition_id": "0xb85834a1972298c72784e8fc952520a60871b5bc8362bee30a2dedcfdfc44e40",
+      "question": "Will the highest temperature in New York City be 50\u00b0F or higher on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "68366095855232122157983262685833599075634593747177927259851545787655613669925",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "16130341531745888821835381004785149429307849758654267764701041579142892407450",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "toronto",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-toronto-on-february-27-2026",
+      "market_slug": "highest-temperature-in-toronto-on-february-27-2026-2corbelow",
+      "condition_id": "0x10ef63821ae58586a4ec5cd2b2075796ae50495462208a86fb19b39ac3fd328a",
+      "question": "Will the highest temperature in Toronto be 2\u00b0C or below on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "85984876951960247569828850200821098539174307673127047286522651476022707427980",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "82038377335379476177750212120933457467872534863710208353397713493775454336933",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "toronto",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-toronto-on-february-27-2026",
+      "market_slug": "highest-temperature-in-toronto-on-february-27-2026-3c",
+      "condition_id": "0x5e5d9c9c4717545c4cf0f1238677050a999488f9d4e2a549d1b430dbf5b9f2b1",
+      "question": "Will the highest temperature in Toronto be 3\u00b0C on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "2079288541951291827277401930716205806317387681028472680822944783822262835759",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "102932478592206099462624009972417970828180880787655948422999017468937632582080",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "toronto",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-toronto-on-february-27-2026",
+      "market_slug": "highest-temperature-in-toronto-on-february-27-2026-4c",
+      "condition_id": "0xc8c5b57458e9605363a46ae482d2abfa6d36cd656951075642f8fc6abb31cc00",
+      "question": "Will the highest temperature in Toronto be 4\u00b0C on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "25230113834850294323445777808963270151346317093932336170619882187571722733760",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "103537499411664600920560745747732345314257408661428391469695233221282041918522",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "toronto",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-toronto-on-february-27-2026",
+      "market_slug": "highest-temperature-in-toronto-on-february-27-2026-5c",
+      "condition_id": "0xd0e855c1449d5a7681b1fb5aa0739ca5105e95989ed5f8b8af42b363fc7dc1df",
+      "question": "Will the highest temperature in Toronto be 5\u00b0C on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "73700736772191720889292414342355815651592242624877782332771369817233234335799",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "107657802085632161600966488001764343717190197235206964066728076365926580733511",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "toronto",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-toronto-on-february-27-2026",
+      "market_slug": "highest-temperature-in-toronto-on-february-27-2026-6c",
+      "condition_id": "0x6b033431fe67b3b898f725edae728af2280be45f88d8d5b6982be0fc5a920a98",
+      "question": "Will the highest temperature in Toronto be 6\u00b0C on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "92413647425966238650771992486009896636972470472869043405400823503820615720927",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "91641670076691129248343332679308212750076906178935377436948597575525431249142",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "toronto",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-toronto-on-february-27-2026",
+      "market_slug": "highest-temperature-in-toronto-on-february-27-2026-7c",
+      "condition_id": "0x5c90ea17e9a6610d393c158c9f793b000c598f1d3b6e3061c90dca2ae52057c1",
+      "question": "Will the highest temperature in Toronto be 7\u00b0C on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "1246711007497825911972055369272284966245563629507456057775645530005283228952",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "84004100628738403573382789101471068622110438635329113943189325691594940013319",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "toronto",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-toronto-on-february-27-2026",
+      "market_slug": "highest-temperature-in-toronto-on-february-27-2026-8c",
+      "condition_id": "0xdd1320b2258a4ec92eb757630babf6430b3cf588546cfff8fb05c1444441dd2f",
+      "question": "Will the highest temperature in Toronto be 8\u00b0C on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "11035463537339749365074923560872307604713200288904523429710308036158344181239",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "95167960157178309518382450080710385879391202436480125164608788119686301323830",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "toronto",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-toronto-on-february-27-2026",
+      "market_slug": "highest-temperature-in-toronto-on-february-27-2026-9c",
+      "condition_id": "0x4592c8f278c21e3f927b7d8ba7930cb2074407d50c859133161408be74ba176f",
+      "question": "Will the highest temperature in Toronto be 9\u00b0C on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "83995581314625560245142597174761816883593655319301856454127032231134332062961",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "18147544867903910001575543190651065571071680214556249713149492058754037238993",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "toronto",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-toronto-on-february-27-2026",
+      "market_slug": "highest-temperature-in-toronto-on-february-27-2026-10corhigher",
+      "condition_id": "0x7cda20f4d1ad57a545b8ea598ffafda29d70b0974ace37ff1c8b566b6e2914d2",
+      "question": "Will the highest temperature in Toronto be 10\u00b0C or higher on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "95846677588637151774703543579459837152700011844576171750839548439355985521347",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "87147310248363599744351986348274608743960826332466463761529275803854813345617",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "toronto",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-toronto-on-february-28-2026",
+      "market_slug": "highest-temperature-in-toronto-on-february-28-2026-neg-2corbelow",
+      "condition_id": "0xd450d0d7e465673fee742a56f4c98655c2b469c75da9db5e0003f1c3165369f7",
+      "question": "Will the highest temperature in Toronto be -2\u00b0C or below on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "44731080808265329232173406712765252367104688987522798280523417414847549319276",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "31188123630755130071201538944409971864018987903903333009287388438039966627881",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "toronto",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-toronto-on-february-28-2026",
+      "market_slug": "highest-temperature-in-toronto-on-february-28-2026-neg-1c",
+      "condition_id": "0xefad1aa38fe8c016c43dae54f03d05eaaea7b5e841b98697bbe38c1e0beb34ee",
+      "question": "Will the highest temperature in Toronto be -1\u00b0C on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "95553702711084288750868404912038182205191748893354239084887758760962829632232",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "110204314761720118181774567822174054746658792368355084467367031343196484056756",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "toronto",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-toronto-on-february-28-2026",
+      "market_slug": "highest-temperature-in-toronto-on-february-28-2026-0c",
+      "condition_id": "0x204f88ed43e098c59331fa13fae2390a9f1b5d7b4846bfbd964e8d1660c0de8f",
+      "question": "Will the highest temperature in Toronto be 0\u00b0C on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "30764103770867992140001507692165105952785843970332511745229759487116779968720",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "47006557237503028377995581601794069522644835264379276616067388631482256655509",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "toronto",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-toronto-on-february-28-2026",
+      "market_slug": "highest-temperature-in-toronto-on-february-28-2026-1c",
+      "condition_id": "0x57cee6e06eaee92a4c33fa1fb1630444bafb455dbc333f398bc8f786e0c5dbe2",
+      "question": "Will the highest temperature in Toronto be 1\u00b0C on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "70524830137448183416736980922809278311715128010298960103609778789036663922133",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "20488899065569821049593230937766959324264505970544712918351673574178480247715",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "toronto",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-toronto-on-february-28-2026",
+      "market_slug": "highest-temperature-in-toronto-on-february-28-2026-2c",
+      "condition_id": "0x04e08e5a03d25b4a274053d5713a605d1011faba02e0092ab29b5c5b96594325",
+      "question": "Will the highest temperature in Toronto be 2\u00b0C on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "18165672348351494849052485308964544644412854621845645164428469168462491557042",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "31466429120305155282494402245837741981497607331023972536311093010506507850833",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "toronto",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-toronto-on-february-28-2026",
+      "market_slug": "highest-temperature-in-toronto-on-february-28-2026-3c",
+      "condition_id": "0x17cba2432c5bb0daea4beeaf070c526987bd43c9c292e51adc2c30535925766e",
+      "question": "Will the highest temperature in Toronto be 3\u00b0C on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "45593277835593463190503850650248475664493508970922809178054265802485143351761",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "45281347058964565990335066693600349379308142890310686863142162709324727279848",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "toronto",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-toronto-on-february-28-2026",
+      "market_slug": "highest-temperature-in-toronto-on-february-28-2026-4c",
+      "condition_id": "0x2b0744cf7e2fa1a160f61e227c435e383c428bb5732c0cb813f9e67085c1cf4f",
+      "question": "Will the highest temperature in Toronto be 4\u00b0C on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "57418948862609827393371162781273822612027852234905750783521237768467614682185",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "80503094011396305654489619883345849658943455941646133456629401740712666744254",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "toronto",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-toronto-on-february-28-2026",
+      "market_slug": "highest-temperature-in-toronto-on-february-28-2026-5c",
+      "condition_id": "0xd49d71b4b927e4a317ee97148045733c50b4e0d2acc3c1594f504b948321072a",
+      "question": "Will the highest temperature in Toronto be 5\u00b0C on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "49139402621045068233490935650946922218245688336281802643698942073874321452413",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "8787896709726817359583974445264228117519953956882991105117608144905814990157",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "toronto",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-toronto-on-february-28-2026",
+      "market_slug": "highest-temperature-in-toronto-on-february-28-2026-6corhigher",
+      "condition_id": "0x0d023f7f73d9fe501118e68f8cc94b269ef111dbc3d2dda43800e2838a8b959d",
+      "question": "Will the highest temperature in Toronto be 6\u00b0C or higher on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "26182329159844663931759155581263671069110303657444687308298000145875127218539",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "75736740534717401352451531641599980161915128721179992818539333125625079709738",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "wellington",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-wellington-on-february-28-2026",
+      "market_slug": "highest-temperature-in-wellington-on-february-28-2026-13corbelow",
+      "condition_id": "0x0740f08a09f3a75d7189dd19e1060a094fafd47959571d5ec0f64575a775da0f",
+      "question": "Will the highest temperature in Wellington be 13\u00b0C or below on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "62164503528595883868112651007474673976379467881093167945631829324512064242358",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "75223906699882293726638204001366594381660887541338473691168136031707847105501",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "wellington",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-wellington-on-february-28-2026",
+      "market_slug": "highest-temperature-in-wellington-on-february-28-2026-14c",
+      "condition_id": "0x3d2f1a03e2dc9879f92822b07c27bfaa5cde4872088e5fe46d7238bae519ad4a",
+      "question": "Will the highest temperature in Wellington be 14\u00b0C on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "107631144360010326897534252652837168127448891195191354880602364466120334680657",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "76376263522923365301075698280908760035477742680131072796009216516186759050140",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "wellington",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-wellington-on-february-28-2026",
+      "market_slug": "highest-temperature-in-wellington-on-february-28-2026-15c",
+      "condition_id": "0x8ae09e3763ae4a957ffb5a422c37c9782a9c16d2a35ea7b3cc63ba8c00c98963",
+      "question": "Will the highest temperature in Wellington be 15\u00b0C on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "25949525798848674102089432303802854246058225215080498993283047109613060662759",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "44958389421513777107901077982093298693007395493466002659656154039407307393194",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "wellington",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-wellington-on-february-28-2026",
+      "market_slug": "highest-temperature-in-wellington-on-february-28-2026-16c",
+      "condition_id": "0x0b4b6924fda6a36c27b6b93756877361423c34f6229b2b31acb17cc7759b956d",
+      "question": "Will the highest temperature in Wellington be 16\u00b0C on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "94944914492091458304293689867506658253991257875026042117769665968342120945704",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "1412782267839123578391268360074800226926587426537427418703816078311406501289",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "wellington",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-wellington-on-february-28-2026",
+      "market_slug": "highest-temperature-in-wellington-on-february-28-2026-17c",
+      "condition_id": "0xae42c3f30a5833942486f15a1820ec786e1d8d4914316724502a02a4186dfcf8",
+      "question": "Will the highest temperature in Wellington be 17\u00b0C on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "48084157988824466078153803188967567072565470847102430810144485167661190727901",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "21927018049220936537476933371578959565252460335370348018732330781526865169700",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "wellington",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-wellington-on-february-28-2026",
+      "market_slug": "highest-temperature-in-wellington-on-february-28-2026-18c",
+      "condition_id": "0xfac0347478efbb481355ca5359453c14d4385a295af68aa024539f34f98ad024",
+      "question": "Will the highest temperature in Wellington be 18\u00b0C on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "60204738987170375010996560702725205746805577586434526651478955256953427412843",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "74641404351202064679801222693681839439826054162056302162722665288533347818413",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "wellington",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-wellington-on-february-28-2026",
+      "market_slug": "highest-temperature-in-wellington-on-february-28-2026-19c",
+      "condition_id": "0xc191c783b8259d99597019e76e08562d4bf84aa583b3970631cd49f8d3fc8759",
+      "question": "Will the highest temperature in Wellington be 19\u00b0C on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "27963801813415295930224465029579324069057764871520344324741083529524100273983",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "115222924985446271136924209143064149967674956170177954584384795837749113531945",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "wellington",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-wellington-on-february-28-2026",
+      "market_slug": "highest-temperature-in-wellington-on-february-28-2026-20c",
+      "condition_id": "0xe8894d84810858c49eb38481cdfd401505668ce2f55b4104269f5880bc74ca64",
+      "question": "Will the highest temperature in Wellington be 20\u00b0C on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "110899857197584388508822030762185715595788241073863460737492060471951073131207",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "66174970094255378581008211066587395914053224972303371046086503859688233445583",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "wellington",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-wellington-on-february-28-2026",
+      "market_slug": "highest-temperature-in-wellington-on-february-28-2026-21corhigher",
+      "condition_id": "0xeaa2cb8a4d93245755e65a4f78d80852db6a13be0b9a300ef3918ae2226004e2",
+      "question": "Will the highest temperature in Wellington be 21\u00b0C or higher on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "78258244062111549386430755615756482454053857525661123719983015978860019242005",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "6553031840764218909232872788107006029877945263253789234650707916287885053617",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "atlanta",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-atlanta-on-february-27-2026",
+      "market_slug": "highest-temperature-in-atlanta-on-february-27-2026-57forbelow",
+      "condition_id": "0xe17fce859ae4b8f18a8279a3e00c8d9076721d83b949ae53bcad73ad3a017f94",
+      "question": "Will the highest temperature in Atlanta be 57\u00b0F or below on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "94652700354767863060504693102698002798667049918816112805978062985966586777863",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "37204561996174882192486806340971671465355129313383760628792181889621311959300",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "atlanta",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-atlanta-on-february-27-2026",
+      "market_slug": "highest-temperature-in-atlanta-on-february-27-2026-58-59f",
+      "condition_id": "0xd2bf88e7b93797cacb0f6ff0edd2fd8aaea317a0186639404224a63686c2a614",
+      "question": "Will the highest temperature in Atlanta be between 58-59\u00b0F on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "109700379271217746016997350428002197536149783324834100089040010843523264033060",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "90863736999211461182779232595158988767949921910428350713268934862725023332468",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "atlanta",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-atlanta-on-february-27-2026",
+      "market_slug": "highest-temperature-in-atlanta-on-february-27-2026-60-61f",
+      "condition_id": "0x2a2eb201fa63099b887b27cc7fcde7b11743aab2b01b7c284220b14864db2d64",
+      "question": "Will the highest temperature in Atlanta be between 60-61\u00b0F on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "81991088710270965948221361292884137795186600773869382290389601121045770183889",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "4527233980378365289831214916071231370907723458013967045758900413955114669884",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "atlanta",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-atlanta-on-february-27-2026",
+      "market_slug": "highest-temperature-in-atlanta-on-february-27-2026-62-63f",
+      "condition_id": "0x5d20ff58a32d94c7fd71c920a559a78f5fcb6d4cffc05fc54488ac65e06a01fb",
+      "question": "Will the highest temperature in Atlanta be between 62-63\u00b0F on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "66165821712450587223313577708899317753239071078969880442085126923673912081053",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "23769478987379492410052079969063585033810463098456343691490251898686345115770",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "atlanta",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-atlanta-on-february-27-2026",
+      "market_slug": "highest-temperature-in-atlanta-on-february-27-2026-64-65f",
+      "condition_id": "0xdb7e22f61a69b9839b5991911d15000a80df24fa39b3f03680d2a1e427914887",
+      "question": "Will the highest temperature in Atlanta be between 64-65\u00b0F on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "80497226310280773661349562644678977747271925439092188581849576212615322525484",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "50782767053013591786881384899660165357654610002355939606460848360013724985530",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "atlanta",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-atlanta-on-february-27-2026",
+      "market_slug": "highest-temperature-in-atlanta-on-february-27-2026-66-67f",
+      "condition_id": "0x9e03b9620653ef681f9fa669adf957379c5957932c5bd1b98eea8866ee66edc4",
+      "question": "Will the highest temperature in Atlanta be between 66-67\u00b0F on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "85445622688118037628522571189635918664505914297984946919178796995753056392400",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "18699125949146922456341199679228681790704046982404776294389512748549827361061",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "atlanta",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-atlanta-on-february-27-2026",
+      "market_slug": "highest-temperature-in-atlanta-on-february-27-2026-68-69f",
+      "condition_id": "0x45b19a4b48cea3fb1960c0cda18575510657b28136149a2490391910657cac02",
+      "question": "Will the highest temperature in Atlanta be between 68-69\u00b0F on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "86534802739024075723654488799191870963333523506343683711191696613554661314405",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "70744839723322108822292978909548666401871425399628622402093747212714595290079",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "atlanta",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-atlanta-on-february-27-2026",
+      "market_slug": "highest-temperature-in-atlanta-on-february-27-2026-70-71f",
+      "condition_id": "0x55fef33b1b98631725156d793b637200cca4944395c59037bab81defbc93d43e",
+      "question": "Will the highest temperature in Atlanta be between 70-71\u00b0F on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "32941667120477101679585760909982411335956196120174650649914626144614816393665",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "27900630449023030890320210192088485511006450569647038980445323207714473919851",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "atlanta",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-atlanta-on-february-27-2026",
+      "market_slug": "highest-temperature-in-atlanta-on-february-27-2026-72forhigher",
+      "condition_id": "0xfc54b8b3f6a7fbca6644483209dfd9df1b3cda54fc05c9c3e4eca7b7c5106b10",
+      "question": "Will the highest temperature in Atlanta be 72\u00b0F or higher on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "72178624496059272919991825381129741782483566955355961673259695631028763896578",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "46867682417845767944921230458223867220541256182024442020324635476484648578417",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "atlanta",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-atlanta-on-february-28-2026",
+      "market_slug": "highest-temperature-in-atlanta-on-february-28-2026-57forbelow",
+      "condition_id": "0x915fe22339df490220f9cef02df26981877884ebd6d3e3dfd2b6c78344a9dc6f",
+      "question": "Will the highest temperature in Atlanta be 57\u00b0F or below on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "23318729961621823975406528232663755190564015332973191180955031344948373655205",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "104921171186916927652817691730415609632478056853736453944208869391477030357103",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "atlanta",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-atlanta-on-february-28-2026",
+      "market_slug": "highest-temperature-in-atlanta-on-february-28-2026-58-59f",
+      "condition_id": "0xe3f4fdb91caeb0f48b7a6fe7bc51491dc53211d884527ea6058b82f12cb81c46",
+      "question": "Will the highest temperature in Atlanta be between 58-59\u00b0F on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "78147451484368389663990979634656314410149021192418298486847649855779898264249",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "74446904535321896793785875444010382386081896710342133508873620048962131458887",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "atlanta",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-atlanta-on-february-28-2026",
+      "market_slug": "highest-temperature-in-atlanta-on-february-28-2026-60-61f",
+      "condition_id": "0xef2db874eb8f28676a1bf41d62c5c47cb2d334678c6dc0967d2e4bac774decc9",
+      "question": "Will the highest temperature in Atlanta be between 60-61\u00b0F on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "60377839686532368288575108759446485997791874732989218106785678608068680650911",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "14340068750678606773930201446582799760003284614448450791962258489899591989026",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "atlanta",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-atlanta-on-february-28-2026",
+      "market_slug": "highest-temperature-in-atlanta-on-february-28-2026-62-63f",
+      "condition_id": "0x8c5358c689cc0efa26831757aa22a1c66e9820f33581b46d4f52873a97f56290",
+      "question": "Will the highest temperature in Atlanta be between 62-63\u00b0F on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "97711897521430846962947611547688857423152150629120238903220578147464410113763",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "2029851726167259302747271751260139581701556683365460264976240208894734884542",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "atlanta",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-atlanta-on-february-28-2026",
+      "market_slug": "highest-temperature-in-atlanta-on-february-28-2026-64-65f",
+      "condition_id": "0xd725b1e0f0a0b64b593c428e02e864aefd3ea1a9a11ceb620dc215ed8568d314",
+      "question": "Will the highest temperature in Atlanta be between 64-65\u00b0F on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "85342252118776394953768177101118463736701411985589570512342927874693369783391",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "62647586530327076294764773241735522839203518553874035099154368547204389765355",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "atlanta",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-atlanta-on-february-28-2026",
+      "market_slug": "highest-temperature-in-atlanta-on-february-28-2026-66-67f",
+      "condition_id": "0xe5367af7da44a87aae98d3872bc6b9ac52c19915d0af11c9d25d45b0f081f60f",
+      "question": "Will the highest temperature in Atlanta be between 66-67\u00b0F on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "54300947821681000460536035624470058754492827893112269037020269963533635314128",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "63556215865174825596965496085972593473476750988114225888755864790829539409450",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "atlanta",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-atlanta-on-february-28-2026",
+      "market_slug": "highest-temperature-in-atlanta-on-february-28-2026-68-69f",
+      "condition_id": "0x4ff82854ae74ae44f3a6e487e88a16410c2c3d05a3cf592853703cb54cb9b874",
+      "question": "Will the highest temperature in Atlanta be between 68-69\u00b0F on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "98645493230713990788335476581544106230800984554850044289379185384395807304447",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "85903058039916619084404738795021751999474309158232864438925323590824158583255",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "atlanta",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-atlanta-on-february-28-2026",
+      "market_slug": "highest-temperature-in-atlanta-on-february-28-2026-70-71f",
+      "condition_id": "0xf1a3c0a6f90fd59a8561162e8c24d5ad06be5265adfa12c6dc0e25aecb34240b",
+      "question": "Will the highest temperature in Atlanta be between 70-71\u00b0F on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "107887348965064991184063191768034171681077321378662814831775168462317596004428",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "50457686515067364955222256552833101821761724134515844971527591724896242673245",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "atlanta",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-atlanta-on-february-28-2026",
+      "market_slug": "highest-temperature-in-atlanta-on-february-28-2026-72forhigher",
+      "condition_id": "0xdcbd531c7a34ed97fb263fc6af81348e669a891aa1cb1232b7e2c8eef7251c38",
+      "question": "Will the highest temperature in Atlanta be 72\u00b0F or higher on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "86905633255501131300666918315466785235271606131552088549269931399177765164841",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "95810505272359892631523891035056668980782765330710750347010854182747993821306",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "chicago",
+      "date": "2026-02-26",
+      "event_slug": "highest-temperature-in-chicago-on-february-26-2026",
+      "market_slug": "highest-temperature-in-chicago-on-february-26-2026-27forbelow",
+      "condition_id": "0x3b4cd2a4485e0d8465a447442ec6507e0303f2f79007cb8423f2e76cf05f3b04",
+      "question": "Will the highest temperature in Chicago be 27\u00b0F or below on February 26?",
+      "end_date": "2026-02-26T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "36477459640822553925394088475833336600129179103931475688691952967312323278886",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "96136424915539096679107628223390649266897347291195789424689887672992948108431",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "chicago",
+      "date": "2026-02-26",
+      "event_slug": "highest-temperature-in-chicago-on-february-26-2026",
+      "market_slug": "highest-temperature-in-chicago-on-february-26-2026-28-29f",
+      "condition_id": "0x0c3d071e0db7d7086236260cdc99f228c181de8e6ce4563987057104f6370d69",
+      "question": "Will the highest temperature in Chicago be between 28-29\u00b0F on February 26?",
+      "end_date": "2026-02-26T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "76740126380564561178195880987166926954140655820908804249721604970705321074577",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "87617699648003980386821850485048084857047768126732501674615922301969019101177",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "chicago",
+      "date": "2026-02-26",
+      "event_slug": "highest-temperature-in-chicago-on-february-26-2026",
+      "market_slug": "highest-temperature-in-chicago-on-february-26-2026-30-31f",
+      "condition_id": "0x2846c2bac2f0f8689cdac3ab77e3719bf4a628fc0bff0ad4a6231b6ec2c8de4e",
+      "question": "Will the highest temperature in Chicago be between 30-31\u00b0F on February 26?",
+      "end_date": "2026-02-26T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "1291685633837174549690564206933760770957340310455807494839196328397376071875",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "102990791199601136351644460886460828934332554510845617864526580989053967450784",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "chicago",
+      "date": "2026-02-26",
+      "event_slug": "highest-temperature-in-chicago-on-february-26-2026",
+      "market_slug": "highest-temperature-in-chicago-on-february-26-2026-32-33f",
+      "condition_id": "0x394db70f30d23a5a3e4fb8df0efc7a1d7433dd8bfc6467c6755f514018e6ad8d",
+      "question": "Will the highest temperature in Chicago be between 32-33\u00b0F on February 26?",
+      "end_date": "2026-02-26T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "84964572490706720891889528416998936580011928902538775103703672981743141091631",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "82416176072312807290244780944936242163934066015416214176110070104708345740980",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "chicago",
+      "date": "2026-02-26",
+      "event_slug": "highest-temperature-in-chicago-on-february-26-2026",
+      "market_slug": "highest-temperature-in-chicago-on-february-26-2026-34-35f",
+      "condition_id": "0x15734479e4aa5fc0360619881b728d1a2bdcb7906e1febe85baa290c5b01a978",
+      "question": "Will the highest temperature in Chicago be between 34-35\u00b0F on February 26?",
+      "end_date": "2026-02-26T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "9464447623411946413839348423047313453725873908957968902736221934563869355465",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "37453977241386663785229146025010383775291546023819325759177056769221709811605",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "chicago",
+      "date": "2026-02-26",
+      "event_slug": "highest-temperature-in-chicago-on-february-26-2026",
+      "market_slug": "highest-temperature-in-chicago-on-february-26-2026-36-37f",
+      "condition_id": "0xfd40c33a8aaab01509b544c2989d76bff50a0366f7dead5479c47d87c3214747",
+      "question": "Will the highest temperature in Chicago be between 36-37\u00b0F on February 26?",
+      "end_date": "2026-02-26T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "12861214258672146800693473292683515387059880555166397323142129405387885201264",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "74777884381786919357660913835138596639231446724506405194629133766540104185102",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "chicago",
+      "date": "2026-02-26",
+      "event_slug": "highest-temperature-in-chicago-on-february-26-2026",
+      "market_slug": "highest-temperature-in-chicago-on-february-26-2026-38-39f",
+      "condition_id": "0xe3ddd7ddbe2b190ade13712bd440fafab0c7763998a37cfa793ee345a35d74af",
+      "question": "Will the highest temperature in Chicago be between 38-39\u00b0F on February 26?",
+      "end_date": "2026-02-26T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "4210736584117179727443631644376593658753634981193179124981186558830382498959",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "25431377632302073881936742527519919915204491879428145706707580602000380891099",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "chicago",
+      "date": "2026-02-26",
+      "event_slug": "highest-temperature-in-chicago-on-february-26-2026",
+      "market_slug": "highest-temperature-in-chicago-on-february-26-2026-40-41f",
+      "condition_id": "0x194e6bf2e7bea0fdc4ada3e0949b28ddae4b66182cd7315fb2505b2323ca101f",
+      "question": "Will the highest temperature in Chicago be between 40-41\u00b0F on February 26?",
+      "end_date": "2026-02-26T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "49090778640990160578321942275996432952000755834186813543203176605319576016136",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "65517370930188964114450438252566914114137471217007302724846512306832013081617",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "chicago",
+      "date": "2026-02-26",
+      "event_slug": "highest-temperature-in-chicago-on-february-26-2026",
+      "market_slug": "highest-temperature-in-chicago-on-february-26-2026-42forhigher",
+      "condition_id": "0x4fa565707648ff322307a83af4a2d89c5e1797625988341964c444379aff2a43",
+      "question": "Will the highest temperature in Chicago be 42\u00b0F or higher on February 26?",
+      "end_date": "2026-02-26T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "11961405759223600023255827915016551913946013603893457912139539506935466208183",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "43544380828043316331070141072703663043866570168515608124466407150538980445638",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "chicago",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-chicago-on-february-27-2026",
+      "market_slug": "highest-temperature-in-chicago-on-february-27-2026-53forbelow",
+      "condition_id": "0x74daafaa79a8d96a0d23489753cd7acd5a55c10c45e9833e24fdc2d120463d05",
+      "question": "Will the highest temperature in Chicago be 53\u00b0F or below on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "33513381783294461340136078701423106058923626602983714956898402806827364802297",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "19153940743516588910844235783682472021059202467875386645877901454409518446126",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "chicago",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-chicago-on-february-27-2026",
+      "market_slug": "highest-temperature-in-chicago-on-february-27-2026-54-55f",
+      "condition_id": "0x6d6cdff43952f18f05bf43322a78d15fa2b9e5cbb2d37bfc95ad259e07a1e4c7",
+      "question": "Will the highest temperature in Chicago be between 54-55\u00b0F on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "94408864005290587689512056699287090667240402354354615675575966155731807126052",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "14700280959908525457453623118191851441692620369930267079404262610689905358722",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "chicago",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-chicago-on-february-27-2026",
+      "market_slug": "highest-temperature-in-chicago-on-february-27-2026-56-57f",
+      "condition_id": "0xc2a3ec9fc28cba1a853385eb58925aa56fab053d5a6d8124bc63e35e5e3b9c80",
+      "question": "Will the highest temperature in Chicago be between 56-57\u00b0F on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "81520435572881722657421739763765153058812580624322158513132915825922955046546",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "19822931436660027834414490937512682025503889112951058704145117686835977633239",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "chicago",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-chicago-on-february-27-2026",
+      "market_slug": "highest-temperature-in-chicago-on-february-27-2026-58-59f",
+      "condition_id": "0x7a919f645d355ee50a982661f243b9dab503367b9996c4af8f7cd997764aa3e8",
+      "question": "Will the highest temperature in Chicago be between 58-59\u00b0F on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "43012960320877363281794504056492289295929884982428506536855099039177282241216",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "72782134210182548972808508728037646658622756566992668749450736062789540992847",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "chicago",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-chicago-on-february-27-2026",
+      "market_slug": "highest-temperature-in-chicago-on-february-27-2026-60-61f",
+      "condition_id": "0x5af6f159835974b4e7d149759f4027d1cd2e9f273f6fd5f0fc22e9fd2501f27a",
+      "question": "Will the highest temperature in Chicago be between 60-61\u00b0F on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "81544208545462075274740508830865485813245422257647544291899288777626320435249",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "534542728028837850374862327604850548425774401126358173464604876258215495973",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "chicago",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-chicago-on-february-27-2026",
+      "market_slug": "highest-temperature-in-chicago-on-february-27-2026-62-63f",
+      "condition_id": "0x30064aa03cf84c2f90fff091e4992daed4c5a3e55e24db598c8f21294b2837f5",
+      "question": "Will the highest temperature in Chicago be between 62-63\u00b0F on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "89051656406496793367402639127055278438508386773079623495137775219816700422569",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "14164855607035572074612030557576459854282002477473328568815406700240183990701",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "chicago",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-chicago-on-february-27-2026",
+      "market_slug": "highest-temperature-in-chicago-on-february-27-2026-64-65f",
+      "condition_id": "0x69358fa1f219fbcabb563871cc506d2dc14c74f1b47ab6e8ab96d38f47ea0f2c",
+      "question": "Will the highest temperature in Chicago be between 64-65\u00b0F on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "26019564197446990840295260073039325910503367996756276150173981512222836825977",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "82306614528637569209454358281149814855487548455194349056960309154920773110525",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "chicago",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-chicago-on-february-27-2026",
+      "market_slug": "highest-temperature-in-chicago-on-february-27-2026-66-67f",
+      "condition_id": "0x99073d7b9ea1e7023c086bf0029120a6407ec8368868421b25fc094f3c5145c5",
+      "question": "Will the highest temperature in Chicago be between 66-67\u00b0F on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "89760086515408370252675915773639268661305170890374866345207966356456730129325",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "7432817810911219268853509842212506091409964007205395116159579486801826677501",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "chicago",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-chicago-on-february-27-2026",
+      "market_slug": "highest-temperature-in-chicago-on-february-27-2026-68forhigher",
+      "condition_id": "0x901b7d24eeb40a687ce2ca52e756293df4b3c2b67935f751c84f53e30768c69c",
+      "question": "Will the highest temperature in Chicago be 68\u00b0F or higher on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "63250576238220877050802248860112198879307997998664136109860416961653297359846",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "4775340786523850392295021954982574144049459388937845730968119084904536264963",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "chicago",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-chicago-on-february-28-2026",
+      "market_slug": "highest-temperature-in-chicago-on-february-28-2026-27forbelow",
+      "condition_id": "0x1832b009404bbb4d2ca6e4840274bd077be5805eea04682066efe950ee4f9095",
+      "question": "Will the highest temperature in Chicago be 27\u00b0F or below on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "286858762677683953863050598937019557322716645380305239375357747205984527272",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "17898534455463105260461138731292265987903172243689542034875375356168861112421",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "chicago",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-chicago-on-february-28-2026",
+      "market_slug": "highest-temperature-in-chicago-on-february-28-2026-28-29f",
+      "condition_id": "0x15e67664c7f8883e281b28ffd0f75d1e5c87ec76ca2379159174a3ec9e92befa",
+      "question": "Will the highest temperature in Chicago be between 28-29\u00b0F on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "79138481308707661737723317102415470744222828272695720505226772410298457080149",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "16672705701470692523753097242890833532956016835094161431129891503245804362165",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "chicago",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-chicago-on-february-28-2026",
+      "market_slug": "highest-temperature-in-chicago-on-february-28-2026-30-31f",
+      "condition_id": "0x264ced343bfb70b718dd1ed24e055b62b04f2cc4adf82fad7b6bf193ba34ff64",
+      "question": "Will the highest temperature in Chicago be between 30-31\u00b0F on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "114465801763009948335625198009441816511909276887973198375460871608855231911298",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "36772645903346106692320582019221140845053439044407910089214783473597031402979",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "chicago",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-chicago-on-february-28-2026",
+      "market_slug": "highest-temperature-in-chicago-on-february-28-2026-32-33f",
+      "condition_id": "0x07f84069f9d2df587f589c8d052c41a39258bca73cc3e8daa2d65d0457a3e757",
+      "question": "Will the highest temperature in Chicago be between 32-33\u00b0F on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "9921113617470276679592035623776075234470356325830911933159598254937760096723",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "20494497178715224323905189806932552983422733847192003462866596976791344509720",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "chicago",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-chicago-on-february-28-2026",
+      "market_slug": "highest-temperature-in-chicago-on-february-28-2026-34-35f",
+      "condition_id": "0xa766dbe05e0d93b95587af3ec759183159e50921f9f1a9e82b5d47a771493f28",
+      "question": "Will the highest temperature in Chicago be between 34-35\u00b0F on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "14143195645237182415878897291976197487864383077358282355702203130452730512771",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "30447754599741687080020287340767985487376292075320037205331212340854837387708",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "chicago",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-chicago-on-february-28-2026",
+      "market_slug": "highest-temperature-in-chicago-on-february-28-2026-36-37f",
+      "condition_id": "0xd1414dfc31eb933bdab746a6248fbdcebba72a5c09b7360c0114e9dd53ce0978",
+      "question": "Will the highest temperature in Chicago be between 36-37\u00b0F on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "102880294193943432682619244305053639326201506661292675809327505549252420068456",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "42205542357148708966435152457357662232001348897470783383295162378842604308922",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "chicago",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-chicago-on-february-28-2026",
+      "market_slug": "highest-temperature-in-chicago-on-february-28-2026-38-39f",
+      "condition_id": "0x72301c7c108a426b52a99d3d87546ebe920824fa601a71c9fadb85951e6799fc",
+      "question": "Will the highest temperature in Chicago be between 38-39\u00b0F on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "31200630337488994475647290976428248325459884009630030117498658658596528699780",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "29568626149773839620214066762751290281957013271772762711079228013093673138704",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "chicago",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-chicago-on-february-28-2026",
+      "market_slug": "highest-temperature-in-chicago-on-february-28-2026-40-41f",
+      "condition_id": "0xd5a2bd7aa23c213bed8d74a431d1beb542cd6f100deafd5a955f94de1995561d",
+      "question": "Will the highest temperature in Chicago be between 40-41\u00b0F on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "107782293874466602570900809067495032916822942495419960586454015989567873769355",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "33855288815360664193782390233079467793073589532830199117479899886581410217266",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "chicago",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-chicago-on-february-28-2026",
+      "market_slug": "highest-temperature-in-chicago-on-february-28-2026-42forhigher",
+      "condition_id": "0xa88806e3bb910d9bab0a6646a19252959f9413f70fc5d4b6045d8799b38eadda",
+      "question": "Will the highest temperature in Chicago be 42\u00b0F or higher on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "65503511441049465113360762252927374268707053401586115253395910419473562628852",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "98093676831151233668161532591754439365659437215998027916514249352708317700366",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "seattle",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-seattle-on-february-27-2026",
+      "market_slug": "highest-temperature-in-seattle-on-february-27-2026-39forbelow",
+      "condition_id": "0xfe1f007848f936bc04410ebe995a865777bc86682e4ec927ebec5a01cd8b527a",
+      "question": "Will the highest temperature in Seattle be 39\u00b0F or below on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "8574443758653898658788863380587887874124383401667645750037323529114968779426",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "82532591914885747256071406860014924316097505469431419659821805888680483854972",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "seattle",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-seattle-on-february-27-2026",
+      "market_slug": "highest-temperature-in-seattle-on-february-27-2026-40-41f",
+      "condition_id": "0x9fb29619b6da5377c79ea7de303979a329e9ff240146d8107752e118c52aa383",
+      "question": "Will the highest temperature in Seattle be between 40-41\u00b0F on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "49426763030554088555174835813682958575312749935407419757285622771546222965779",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "22669950820541320939747949531769960604369230279289420543794186435583830712513",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "seattle",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-seattle-on-february-27-2026",
+      "market_slug": "highest-temperature-in-seattle-on-february-27-2026-42-43f",
+      "condition_id": "0x45dfefc576581b027509a5454003b2ab06262862609907efff79402882bfce0c",
+      "question": "Will the highest temperature in Seattle be between 42-43\u00b0F on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "89062020957785035366310887351186039231703008408692616658407306970775539449472",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "48628716868210753452581088843796023331207013402865178125176650683692525375946",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "seattle",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-seattle-on-february-27-2026",
+      "market_slug": "highest-temperature-in-seattle-on-february-27-2026-44-45f",
+      "condition_id": "0xf87cb77296fa0c6ddf9bb48a1356bfbd2d3783d3eef848aaaedd534b4d63907c",
+      "question": "Will the highest temperature in Seattle be between 44-45\u00b0F on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "22941560906304234592290045618976248133696749581954887035362546952197636492763",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "98469207972837065954669285308545703050992244053210762958268226370865433262039",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "seattle",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-seattle-on-february-27-2026",
+      "market_slug": "highest-temperature-in-seattle-on-february-27-2026-46-47f",
+      "condition_id": "0x43b29bf6acb37a0194455daf63f9edacf3da9529564b00b711ddc77792f2545a",
+      "question": "Will the highest temperature in Seattle be between 46-47\u00b0F on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "102054562456699364994757320420798899844072256735963700264314497202804390486975",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "52598939119380978730456284559075770938691913985792393995645396564135953276969",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "seattle",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-seattle-on-february-27-2026",
+      "market_slug": "highest-temperature-in-seattle-on-february-27-2026-48-49f",
+      "condition_id": "0x89981cb29d3c6e5fa47fe91ed745dbc6de2d671e370bd9f62b9dda61b975e76e",
+      "question": "Will the highest temperature in Seattle be between 48-49\u00b0F on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "92768338787353259740227842156355103510617830247078522232452608082149264865961",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "58716156319538406247281209971026326854088000897134162782279300646004696636138",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "seattle",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-seattle-on-february-27-2026",
+      "market_slug": "highest-temperature-in-seattle-on-february-27-2026-50-51f",
+      "condition_id": "0x33253cce091e5cc306b2f30e6cf5385f79f2080a67c731727d6b268904c5b25d",
+      "question": "Will the highest temperature in Seattle be between 50-51\u00b0F on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "86728602056261268348452295668464665109748710031265829908038847283126249713806",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "98411828819498886575674357362558964040691201667743204631751602889238115984418",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "seattle",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-seattle-on-february-27-2026",
+      "market_slug": "highest-temperature-in-seattle-on-february-27-2026-52-53f",
+      "condition_id": "0x548edc5223181e75303e04bdd0c5e0fda9d86e92ffca2692e8f7963a818396f7",
+      "question": "Will the highest temperature in Seattle be between 52-53\u00b0F on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "7928721359603055588291615426770035368292498294512053812831419479130257241722",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "108103370554358044019907421983639819201239170523212652105813260180110893382288",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "seattle",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-seattle-on-february-27-2026",
+      "market_slug": "highest-temperature-in-seattle-on-february-27-2026-54forhigher",
+      "condition_id": "0x5272174da5e99f0da8c98f032d1ea676d0d0cff139a061350cbccb70dbac7fc0",
+      "question": "Will the highest temperature in Seattle be 54\u00b0F or higher on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "44251424198520925833139071967755613019189481254362264753175615363484730859775",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "13663272383914724481869701348477615238911466683589933970129320182502361149972",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "seattle",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-seattle-on-february-28-2026",
+      "market_slug": "highest-temperature-in-seattle-on-february-28-2026-43forbelow",
+      "condition_id": "0xaade2e5974fdd09396ef690fb28875d2aed39ef042c232bca69d25c8beb4b04c",
+      "question": "Will the highest temperature in Seattle be 43\u00b0F or below on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "32867382433402442311333498743337453923197970414560342997096560849238536016184",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "94108273731632411158763233242081100028736462841482774345473157643059903102900",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "seattle",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-seattle-on-february-28-2026",
+      "market_slug": "highest-temperature-in-seattle-on-february-28-2026-44-45f",
+      "condition_id": "0x7b4a00d7547c5cdafaf8bc24796e1e219264c6387bee3ea3b50bbc284ca3392b",
+      "question": "Will the highest temperature in Seattle be between 44-45\u00b0F on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "84371017087399708181366756730618975663591115777322364791693147059052911987492",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "24387189430467871672059573423673336739343909836537263435374879282233457353126",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "seattle",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-seattle-on-february-28-2026",
+      "market_slug": "highest-temperature-in-seattle-on-february-28-2026-46-47f",
+      "condition_id": "0xa60788e130c3858d778321f3e358cf41f309addfc51f945390f0d1f06b8c05c8",
+      "question": "Will the highest temperature in Seattle be between 46-47\u00b0F on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "40041851275275309412157161724545228808237427776464675080837326376674850393075",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "30962384556906260017153293968567624092277784850668967788653116690124493169504",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "seattle",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-seattle-on-february-28-2026",
+      "market_slug": "highest-temperature-in-seattle-on-february-28-2026-48-49f",
+      "condition_id": "0x91438f4808d0807d25c2fbb0796edc09d52d5af51fc1afce06218b529a38f7fd",
+      "question": "Will the highest temperature in Seattle be between 48-49\u00b0F on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "78914204977224262442116140945289287478703016078305017284040391292708583334965",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "41352931928840519143823368677990709866496935780462565750811466289452556319898",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "seattle",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-seattle-on-february-28-2026",
+      "market_slug": "highest-temperature-in-seattle-on-february-28-2026-50-51f",
+      "condition_id": "0x405e17e229c8ad58b25f464f13f345a8d71f29ded8b24f1bce3a192fd9b5b01d",
+      "question": "Will the highest temperature in Seattle be between 50-51\u00b0F on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "48022261916401944956703678853115451679469831546364071944215793364062539601680",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "89767494888279030808323216202083240113563327709724103032647740109129766024003",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "seattle",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-seattle-on-february-28-2026",
+      "market_slug": "highest-temperature-in-seattle-on-february-28-2026-52-53f",
+      "condition_id": "0x8c7d192da61e3f46fc1be7ef9af8037c63ea773f0ac07114317094fa42124fb8",
+      "question": "Will the highest temperature in Seattle be between 52-53\u00b0F on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "60393767259478493399558936289842127913120989763275999783648386460166233383489",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "81170901059158792044101472156240282359101494138654993460572556691457854963141",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "seattle",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-seattle-on-february-28-2026",
+      "market_slug": "highest-temperature-in-seattle-on-february-28-2026-54-55f",
+      "condition_id": "0x961dbba0947deeac4ca5a6dc819b9fc5a1db966a3991a67d9ae6d03639129a28",
+      "question": "Will the highest temperature in Seattle be between 54-55\u00b0F on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "4899864493948009474111093461203005315398646248559971353350841278643442164246",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "108364178930140566876229594455129072630138429755739110234428290096890743742092",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "seattle",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-seattle-on-february-28-2026",
+      "market_slug": "highest-temperature-in-seattle-on-february-28-2026-56-57f",
+      "condition_id": "0x445d27fafb3417b1275685efa76dbc88f495b8457f4c7c363acfffd08cdd8ebb",
+      "question": "Will the highest temperature in Seattle be between 56-57\u00b0F on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "59009818513094528989487832746247611889687684581552080645328289704609919177514",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "71341363826109120365580135983908784686329429265933602629874137365619002695802",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "seattle",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-seattle-on-february-28-2026",
+      "market_slug": "highest-temperature-in-seattle-on-february-28-2026-58forhigher",
+      "condition_id": "0x490597cff020a6355c833e97ddb46eb8cca07efb4017c1809712e7c4fa520230",
+      "question": "Will the highest temperature in Seattle be 58\u00b0F or higher on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "89194844356866214294895367616920683920067741921703221968750190562694853111819",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "3367567354274526460095384947688055494247463004281501274706760891835322502918",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "buenos-aires",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-buenos-aires-on-february-27-2026",
+      "market_slug": "highest-temperature-in-buenos-aires-on-february-27-2026-28corbelow",
+      "condition_id": "0x887a108aec3b53fda5c7672727e199344449ce9a5405cb5d6a7f368517506b11",
+      "question": "Will the highest temperature in Buenos Aires be 28\u00b0C or below on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "100182416289856534433296556373858784294351922176667263279256573037869134673906",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "20222375978619266948497019197952083000977074209376620206666969039534071983780",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "buenos-aires",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-buenos-aires-on-february-27-2026",
+      "market_slug": "highest-temperature-in-buenos-aires-on-february-27-2026-29c",
+      "condition_id": "0x55a32bdec80bc0afedcaa3a6a2c59d2d5f82a2d008d778563e3133c4bafb27c6",
+      "question": "Will the highest temperature in Buenos Aires be 29\u00b0C on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "41026030126569548986372084078737267893346255570947431891020757112251792417698",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "57889919604305469627234223161904927155975711923081160760048767814238922387487",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "buenos-aires",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-buenos-aires-on-february-27-2026",
+      "market_slug": "highest-temperature-in-buenos-aires-on-february-27-2026-30c",
+      "condition_id": "0xd4fcf04a985af0f639ad88296f2285a20cba5873dbc35cdff0e60b30e786f9f9",
+      "question": "Will the highest temperature in Buenos Aires be 30\u00b0C on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "84906179068064404840364061945154219854692040754426794556437344026955808349126",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "19953106150613635209192013043440828769859002988527022334781613817655381197589",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "buenos-aires",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-buenos-aires-on-february-27-2026",
+      "market_slug": "highest-temperature-in-buenos-aires-on-february-27-2026-31c",
+      "condition_id": "0x8c11e2780b378918eef87d5eebf385e02be207fdd8be25c5f7f4e5da38a582d4",
+      "question": "Will the highest temperature in Buenos Aires be 31\u00b0C on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "21918497041980571808848635027279799936346491438870438136739379481262546048949",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "57124791969437144126702943462610653308354515025184959399834902825562667926989",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "buenos-aires",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-buenos-aires-on-february-27-2026",
+      "market_slug": "highest-temperature-in-buenos-aires-on-february-27-2026-32c",
+      "condition_id": "0x227fe5dcb1387cb2579113391de4f4a728e5de36b09f5bb419a64613a7470e42",
+      "question": "Will the highest temperature in Buenos Aires be 32\u00b0C on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "4447085827420217862593782476792464999582430867582997589023134970231420610916",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "73399214496839960267352215949465434431520783384755472497522799875144432890573",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "buenos-aires",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-buenos-aires-on-february-27-2026",
+      "market_slug": "highest-temperature-in-buenos-aires-on-february-27-2026-33c",
+      "condition_id": "0xa8dc6758605e641ea9c43a3ae16473775c3f39f2bc53587e523f4cecd59f6c31",
+      "question": "Will the highest temperature in Buenos Aires be 33\u00b0C on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "29051219100333939853896558664829043820200517729192703881704342057337930909938",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "87132239458956280762735813655505592756464444342571665033654356124274075306200",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "buenos-aires",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-buenos-aires-on-february-27-2026",
+      "market_slug": "highest-temperature-in-buenos-aires-on-february-27-2026-34c",
+      "condition_id": "0x4b8a30aaedfa770ac88e1c9561b22bbecc14abd69b569cd0556568280eaec229",
+      "question": "Will the highest temperature in Buenos Aires be 34\u00b0C on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "3410653157589725681017245352828936209166423280544078159231294421859924951447",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "112187343795741067668503614206051771201962545790015461142396686939228547232777",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "buenos-aires",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-buenos-aires-on-february-27-2026",
+      "market_slug": "highest-temperature-in-buenos-aires-on-february-27-2026-35c",
+      "condition_id": "0xc626da2f5b4ff6f80d4ef921d54e3eeebca46637f05418b0d7b27410854ddc66",
+      "question": "Will the highest temperature in Buenos Aires be 35\u00b0C on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "2149879834403340188210009306196571271790766841082762595285339882415825895127",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "27967890711930985279889291821529746266935017253602583101950880817450823270900",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "buenos-aires",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-buenos-aires-on-february-27-2026",
+      "market_slug": "highest-temperature-in-buenos-aires-on-february-27-2026-36corhigher",
+      "condition_id": "0x845897e37908bae40b67d5fac83a44b1e33a9994d184d623671f7e0835888346",
+      "question": "Will the highest temperature in Buenos Aires be 36\u00b0C or higher on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "109218370177481276345374586117002099589804189823914491107647580769709559956771",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "61470697290779180536634772140655842495335609899636253566364612594956973736388",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "buenos-aires",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-buenos-aires-on-february-28-2026",
+      "market_slug": "highest-temperature-in-buenos-aires-on-february-28-2026-29corbelow",
+      "condition_id": "0xb9fb46359dde6cac87d375d28a2f9de2ee97fc3a2ab5d5ed10a5ae032e72ecb4",
+      "question": "Will the highest temperature in Buenos Aires be 29\u00b0C or below on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "108923675199838533152023718463726979911660610800680492676632186896365107824309",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "82159649233832412009900026403745632848644595214546216094177298837093414631531",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "buenos-aires",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-buenos-aires-on-february-28-2026",
+      "market_slug": "highest-temperature-in-buenos-aires-on-february-28-2026-30c",
+      "condition_id": "0x65d18adc4e4926f1cba1a3100625cc08d7d6f4f6296b98e60d68b9d8c31b1741",
+      "question": "Will the highest temperature in Buenos Aires be 30\u00b0C on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "112267940127742339976386907754662559338119268399348087191145251016662047428652",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "94578345600783769978354827542384242707275762534132688032182083406219941557188",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "buenos-aires",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-buenos-aires-on-february-28-2026",
+      "market_slug": "highest-temperature-in-buenos-aires-on-february-28-2026-31c",
+      "condition_id": "0x10c4ab3d3dc54ccdf5dacad272c92381fcc30405e75ca9b761365c313eb35047",
+      "question": "Will the highest temperature in Buenos Aires be 31\u00b0C on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "8631979610491803817969588337639803110063388927861093007423655383210033961697",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "14798494305198300299229520003100570355988755380219079955554389746100408141148",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "buenos-aires",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-buenos-aires-on-february-28-2026",
+      "market_slug": "highest-temperature-in-buenos-aires-on-february-28-2026-32c",
+      "condition_id": "0x0b79d6a031e48a577056ed9865ba2a59ec274bba3200197e359569cea76e5466",
+      "question": "Will the highest temperature in Buenos Aires be 32\u00b0C on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "57979556922968509274909515625450789051027050539921477029606109026570955532401",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "99599975677607762386016450593915871274330537435036301405415192802989838046252",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "buenos-aires",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-buenos-aires-on-february-28-2026",
+      "market_slug": "highest-temperature-in-buenos-aires-on-february-28-2026-33c",
+      "condition_id": "0x118c8463b32647adb6a004677d334b0c556b440cd6768bff178c2737a5f324e5",
+      "question": "Will the highest temperature in Buenos Aires be 33\u00b0C on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "63942446282115114746056049112222261801915557378475771570253261420530742905136",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "31657046598891564759304966052891574908223082942012499111825253607494550690418",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "buenos-aires",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-buenos-aires-on-february-28-2026",
+      "market_slug": "highest-temperature-in-buenos-aires-on-february-28-2026-34c",
+      "condition_id": "0xd81ea1b5b3dced7351412540b85e1aadd508f246e6fc8a78bea4c40e1f99ac70",
+      "question": "Will the highest temperature in Buenos Aires be 34\u00b0C on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "49274357076012243201538835977730603092571663186601016737750409574214345974557",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "3037988899577645505788127061899780799407355971203691254891532962003480136974",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "buenos-aires",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-buenos-aires-on-february-28-2026",
+      "market_slug": "highest-temperature-in-buenos-aires-on-february-28-2026-35c",
+      "condition_id": "0x0ffe3c9d921523853294c609cbb9c2abbbae10697285c3cd0e5657ca2393b93f",
+      "question": "Will the highest temperature in Buenos Aires be 35\u00b0C on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "86909982250808704882049600199115582253820183489684993560148063995914096248531",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "7883846063819308018586980369986767060879886610996038990873198075644920312475",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "buenos-aires",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-buenos-aires-on-february-28-2026",
+      "market_slug": "highest-temperature-in-buenos-aires-on-february-28-2026-36c",
+      "condition_id": "0xfe794430a3432bd1cc9e41bd610867a8fec3ac3321911bdf532de4c3feeeb46e",
+      "question": "Will the highest temperature in Buenos Aires be 36\u00b0C on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "24681591094892258149737774019362009001718271253843641049660631576227000556382",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "21298842868765834587787082301353278137709995680192921458256183415828656795453",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "buenos-aires",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-buenos-aires-on-february-28-2026",
+      "market_slug": "highest-temperature-in-buenos-aires-on-february-28-2026-37corhigher",
+      "condition_id": "0x9972414e6b4bc76b4137f97d77c8ea1c3d4fa66b68a9d63c5ef3ece46b8963a4",
+      "question": "Will the highest temperature in Buenos Aires be 37\u00b0C or higher on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "105595718515447137561913623995101801352279895505838462700463057602687295881834",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "21654695066640092538772861869760037607471770171180263273924252102951344091036",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "miami",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-miami-on-february-27-2026",
+      "market_slug": "highest-temperature-in-miami-on-february-27-2026-73forbelow",
+      "condition_id": "0xc07a2a8535f829b87c565dad9dd98d0c2554a54ff98cb71c970f59277f3589a2",
+      "question": "Will the highest temperature in Miami be 73\u00b0F or below on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "55405375541356783997806137978197488259676306326040141509654302401707579013843",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "38325702518962961060003231082760202888309454355313262913839096988967592731508",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "miami",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-miami-on-february-27-2026",
+      "market_slug": "highest-temperature-in-miami-on-february-27-2026-74-75f",
+      "condition_id": "0x30b4555b3505bf977146e75f5efa099b3fd74ea9c4f403634f6641ca199b5467",
+      "question": "Will the highest temperature in Miami be between 74-75\u00b0F on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "89300873915563684097852782777925312825098941854143834565531349443675654433039",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "57127866567598707934635676847978586840182670074524894270074682678537745782113",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "miami",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-miami-on-february-27-2026",
+      "market_slug": "highest-temperature-in-miami-on-february-27-2026-76-77f",
+      "condition_id": "0x75d17265579e739a3b31c8dbedf397a6d798b76c7d1d14e835e0063204b1c47e",
+      "question": "Will the highest temperature in Miami be between 76-77\u00b0F on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "76245360016023242826236193145341542415022157238221457666529711916868503812078",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "34869038330588560393735233323350456955240165619596476754801412225874365722524",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "miami",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-miami-on-february-27-2026",
+      "market_slug": "highest-temperature-in-miami-on-february-27-2026-78-79f",
+      "condition_id": "0xce04428e559b0840900c58c739e5c3fdd79c3bf02a000e116772276b320f7ada",
+      "question": "Will the highest temperature in Miami be between 78-79\u00b0F on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "110036381438342699021067370949517905620035657219575909333580006171671810352706",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "46303854696619889012272343072698376210301856943392497529843698813645540818331",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "miami",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-miami-on-february-27-2026",
+      "market_slug": "highest-temperature-in-miami-on-february-27-2026-80-81f",
+      "condition_id": "0x61b11f884e3e4e8e30e0cdcab0af6ec33f8070c621abe7051b026591a97c05fc",
+      "question": "Will the highest temperature in Miami be between 80-81\u00b0F on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "14562526356981665755948122077773642264295480733090115614518182653245057851367",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "774139588629407798586997239854989223443181202139991688537968613681482180182",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "miami",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-miami-on-february-27-2026",
+      "market_slug": "highest-temperature-in-miami-on-february-27-2026-82-83f",
+      "condition_id": "0x1142c859c89530c516a8c9dd08d28e2eee685bea08cca85d8757cbe9f33ee404",
+      "question": "Will the highest temperature in Miami be between 82-83\u00b0F on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "109985676209592760557750636846657668187945501322934837931387911380513364864101",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "22180210100871349833662469161192284669740861158322183613313063243706237326946",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "miami",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-miami-on-february-27-2026",
+      "market_slug": "highest-temperature-in-miami-on-february-27-2026-84-85f",
+      "condition_id": "0xf5bb1e12103ac936d485be1726e967689a1b73e727b38b255f09d57318749b01",
+      "question": "Will the highest temperature in Miami be between 84-85\u00b0F on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "77224917752133460883651942453229828374338420392050610427552844436801370412383",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "20602818155160987502903978776979171365574422287446732530296292117747750914398",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "miami",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-miami-on-february-27-2026",
+      "market_slug": "highest-temperature-in-miami-on-february-27-2026-86-87f",
+      "condition_id": "0xbdc28f2fe8895eca5a7706e331a1e715bcec168e26e966eb594b336730b5c348",
+      "question": "Will the highest temperature in Miami be between 86-87\u00b0F on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "29594170763052682972561497575555487930871016951758439141683978503488964038137",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "91171800692029940014137031071800580610116160671319339605064901467210414443837",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "miami",
+      "date": "2026-02-27",
+      "event_slug": "highest-temperature-in-miami-on-february-27-2026",
+      "market_slug": "highest-temperature-in-miami-on-february-27-2026-88forhigher",
+      "condition_id": "0xee3f86d16cbd369f1b171e205fd4cef6a605e4e975e506edd5096800ea353781",
+      "question": "Will the highest temperature in Miami be 88\u00b0F or higher on February 27?",
+      "end_date": "2026-02-27T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "2682212095733633416282911981524493917821817807668569918122498697457449797177",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "100870177380336975139803973820016415153360530973819189494347900778402026565004",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "miami",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-miami-on-february-28-2026",
+      "market_slug": "highest-temperature-in-miami-on-february-28-2026-77forbelow",
+      "condition_id": "0xdc1c77967c32ef3cd2fe0efe9c0fa4c132ad6ec75f7c618a6482aafa549147c0",
+      "question": "Will the highest temperature in Miami be 77\u00b0F or below on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "34495787989648597591503864222799738546169753966180488272071210134164327423448",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "29524646851684772398945923071320045793459603362128884831637282718148759847746",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "miami",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-miami-on-february-28-2026",
+      "market_slug": "highest-temperature-in-miami-on-february-28-2026-78-79f",
+      "condition_id": "0x7637494ea717fcc2f9b26ff75734384249410d1db140a006f9a99f9ed6e6cfcf",
+      "question": "Will the highest temperature in Miami be between 78-79\u00b0F on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "82148189123227702403436379538410204750223473797963042390847288829556426571434",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "63687604905742743453296358943208673432085099140189580328007626120692187691138",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "miami",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-miami-on-february-28-2026",
+      "market_slug": "highest-temperature-in-miami-on-february-28-2026-80-81f",
+      "condition_id": "0x4a4f50bccee5e4f1a093285a91c7c6b2ea07eba7f41c4f1b13c3539e2a15d6e1",
+      "question": "Will the highest temperature in Miami be between 80-81\u00b0F on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "55517739501486643629403293984160265055199940642945509813729803591700989333070",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "42726790778255041036086266603672240857277206651844560399224928144524265785197",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "miami",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-miami-on-february-28-2026",
+      "market_slug": "highest-temperature-in-miami-on-february-28-2026-82-83f",
+      "condition_id": "0xb3b2384d727b2751808c05eb109abca3f727a4f92f21425cf1ef08b5fb241dcc",
+      "question": "Will the highest temperature in Miami be between 82-83\u00b0F on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "104173510843562916760408952418966189909502399010657132909645396718169619177762",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "112201016509173558127907851682378765751403512437531628827296154613183842719153",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "miami",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-miami-on-february-28-2026",
+      "market_slug": "highest-temperature-in-miami-on-february-28-2026-84-85f",
+      "condition_id": "0x32515a11bdd5240323cbdec7f961623a69b931d1ee73a26efbc5c23c6107f864",
+      "question": "Will the highest temperature in Miami be between 84-85\u00b0F on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "107633715527814681850576572607768980336675713331989079888927498157050758259737",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "59678159799475442844840039702659419208362804818884708556131317989075515964809",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "miami",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-miami-on-february-28-2026",
+      "market_slug": "highest-temperature-in-miami-on-february-28-2026-86-87f",
+      "condition_id": "0x414296f5579eed82ff39a3a5ff3268a5f5935f77a00e97ce4dff3d3dfe76e3fb",
+      "question": "Will the highest temperature in Miami be between 86-87\u00b0F on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "83348654791911177614044841268520261362179902251033340494117375573239466554502",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "105169500446325138752495816114048468453386422810345076874757175657356788646696",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "miami",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-miami-on-february-28-2026",
+      "market_slug": "highest-temperature-in-miami-on-february-28-2026-88-89f",
+      "condition_id": "0xbc968f322cb34eee974fb0cc0e928fd251cac76a51c527bc81563121c401eba2",
+      "question": "Will the highest temperature in Miami be between 88-89\u00b0F on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "42581235122847148360788678960418951542470368446524375194019572457682561734873",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "3813324183250319549764188858515985231508447394409000538832046437556724907883",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "miami",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-miami-on-february-28-2026",
+      "market_slug": "highest-temperature-in-miami-on-february-28-2026-90-91f",
+      "condition_id": "0x0f64d41604997913da16c594eef39eafcd9602167d2be6d0549a3b76a138315b",
+      "question": "Will the highest temperature in Miami be between 90-91\u00b0F on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "27305971482752000030277894972680858221317352127785258906455257957859928922385",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "40048370656534624255061734890749659475390246827620856544877517079150822885654",
+          "outcome": "No"
+        }
+      }
+    },
+    {
+      "city": "miami",
+      "date": "2026-02-28",
+      "event_slug": "highest-temperature-in-miami-on-february-28-2026",
+      "market_slug": "highest-temperature-in-miami-on-february-28-2026-92forhigher",
+      "condition_id": "0x4e6ea7879073263e5c66fca6232b713e5ae8eba15551dd8ffcf72ca789177945",
+      "question": "Will the highest temperature in Miami be 92\u00b0F or higher on February 28?",
+      "end_date": "2026-02-28T12:00:00Z",
+      "tokens": {
+        "yes": {
+          "token_id": "1675132750726667413629568021699623310825364498982698423573541396974528210369",
+          "outcome": "Yes"
+        },
+        "no": {
+          "token_id": "40244443695031267946175156657402630677082882312735590365979593515515930364712",
+          "outcome": "No"
+        }
+      }
+    }
+  ]
+}
