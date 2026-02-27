@@ -27,20 +27,36 @@ class DataLogger:
         self.snapshots_buffer = []
         self.ticks_buffer = []
         self.last_flush = time.time()
-        self.flush_interval = 30 # seconds
+        self.flush_interval = 900 # 15 minutes
+        
+        # Deduplication state
+        self.last_snapshot = None # (bids_json, asks_json)
+        self.last_tick = None     # (price, size, side, best_bid, best_ask)
 
     def add_snapshot(self, timestamp, asset_id, bids, asks):
+        # Deduplicate: only add if the orderbook actually changed
+        bids_json = json.dumps(bids)
+        asks_json = json.dumps(asks)
+        if self.last_snapshot == (bids_json, asks_json):
+            return
+
         self.snapshots_buffer.append({
             'timestamp': float(timestamp) if timestamp else 0,
             'market_slug': self.market_slug,
             'asset_id': asset_id,
-            'bids': json.dumps(bids),
-            'asks': json.dumps(asks),
+            'bids': bids_json,
+            'asks': asks_json,
             'end_date': self.end_date
         })
+        self.last_snapshot = (bids_json, asks_json)
         shared_state.state['polymarket_snapshots'] += 1
 
     def add_tick(self, timestamp, asset_id, price, size, side, best_bid, best_ask):
+        # Deduplicate ticks/BBO updates
+        this_tick = (float(price), float(size), side, best_bid, best_ask)
+        if self.last_tick == this_tick:
+            return
+
         self.ticks_buffer.append({
             'timestamp': float(timestamp) if timestamp else 0,
             'market_slug': self.market_slug,
@@ -51,6 +67,7 @@ class DataLogger:
             'best_bid': float(best_bid) if best_bid != 'N/A' else None,
             'best_ask': float(best_ask) if best_ask != 'N/A' else None
         })
+        self.last_tick = this_tick
         shared_state.state['polymarket_ticks'] += 1
 
     def add_trade(self, timestamp, asset_id, price, size, side):
@@ -74,34 +91,36 @@ class DataLogger:
     def flush(self):
         now = datetime.datetime.now(datetime.timezone.utc)
         date_folder = now.strftime("%Y-%m-%d")
-        time_suffix = now.strftime("%H_%M_%S")
+        time_suffix = now.strftime("%H_00") # Hourly files
 
         base_dir = os.path.join(DATA_DIR, self.coin, self.timeframe, self.market_slug, date_folder)
         
         try:
             os.makedirs(base_dir, exist_ok=True)
-            flushed = False
 
-            if self.trades_buffer:
-                df = pd.DataFrame(self.trades_buffer)
-                df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms', utc=True)
-                df.to_parquet(os.path.join(base_dir, f"{time_suffix}_trades.parquet"), index=False)
-                self.trades_buffer.clear()
-                flushed = True
-
-            if self.snapshots_buffer:
-                df = pd.DataFrame(self.snapshots_buffer)
-                df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms', utc=True)
-                df.to_parquet(os.path.join(base_dir, f"{time_suffix}_snapshots.parquet"), index=False)
-                self.snapshots_buffer.clear()
-                flushed = True
-
-            if self.ticks_buffer:
-                df = pd.DataFrame(self.ticks_buffer)
-                df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms', utc=True)
-                df.to_parquet(os.path.join(base_dir, f"{time_suffix}_ticks.parquet"), index=False)
-                self.ticks_buffer.clear()
-                flushed = True
+            for target_buffer, prefix in [(self.trades_buffer, "trades"), 
+                                          (self.snapshots_buffer, "snapshots"), 
+                                          (self.ticks_buffer, "ticks")]:
+                if not target_buffer:
+                    continue
+                
+                new_df = pd.DataFrame(target_buffer)
+                new_df['timestamp'] = pd.to_datetime(new_df['timestamp'], unit='ms', utc=True)
+                
+                file_path = os.path.join(base_dir, f"{time_suffix}_{prefix}.parquet")
+                
+                # Check for existing hourly file to append
+                if os.path.exists(file_path):
+                    try:
+                        old_df = pd.read_parquet(file_path)
+                        final_df = pd.concat([old_df, new_df], ignore_index=True)
+                        final_df.to_parquet(file_path, index=False)
+                    except Exception:
+                        new_df.to_parquet(file_path, index=False)
+                else:
+                    new_df.to_parquet(file_path, index=False)
+                
+                target_buffer.clear()
 
         except Exception as e:
             pass

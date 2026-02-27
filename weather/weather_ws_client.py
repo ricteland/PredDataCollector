@@ -27,21 +27,37 @@ class DataLogger:
         self.snapshots_buffer = []
         self.ticks_buffer = []
         self.last_flush = time.time()
-        self.flush_interval = 30
+        self.flush_interval = 900 # 15 minutes
+        
+        # Deduplication state
+        self.last_snapshot = None # (bids_json, asks_json)
+        self.last_tick = None     # (price, size, side, best_bid, best_ask)
 
     def add_snapshot(self, timestamp, asset_id, bids, asks):
+        # Deduplicate: only add if the orderbook actually changed
+        bids_json = json.dumps(bids)
+        asks_json = json.dumps(asks)
+        if self.last_snapshot == (bids_json, asks_json):
+            return
+            
         self.snapshots_buffer.append({
             'timestamp': float(timestamp) if timestamp else 0,
             'market_slug': self.market_slug,
             'condition_id': self.condition_id,
             'asset_id': asset_id,
-            'bids': json.dumps(bids),
-            'asks': json.dumps(asks),
+            'bids': bids_json,
+            'asks': asks_json,
             'end_date': self.end_date
         })
+        self.last_snapshot = (bids_json, asks_json)
         weather_shared_state.state['polymarket_snapshots'] += 1
 
     def add_tick(self, timestamp, asset_id, price, size, side, best_bid, best_ask):
+        # Deduplicate ticks/BBO updates
+        this_tick = (float(price), float(size), side, best_bid, best_ask)
+        if self.last_tick == this_tick:
+            return
+            
         self.ticks_buffer.append({
             'timestamp': float(timestamp) if timestamp else 0,
             'market_slug': self.market_slug,
@@ -53,6 +69,7 @@ class DataLogger:
             'best_bid': float(best_bid) if best_bid != 'N/A' else None,
             'best_ask': float(best_ask) if best_ask != 'N/A' else None
         })
+        self.last_tick = this_tick
         weather_shared_state.state['polymarket_ticks'] += 1
 
     def add_trade(self, timestamp, asset_id, price, size, side):
@@ -76,30 +93,36 @@ class DataLogger:
 
     def flush(self):
         now = datetime.datetime.now(datetime.timezone.utc)
-        time_suffix = now.strftime("%H_%M_%S")
+        time_suffix = now.strftime("%H_00") # Hourly files
 
         base_dir = os.path.join(DATA_DIR, self.city, self.target_date, self.condition_id)
         
         try:
             os.makedirs(base_dir, exist_ok=True)
 
-            if self.trades_buffer:
-                df = pd.DataFrame(self.trades_buffer)
-                df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms', utc=True)
-                df.to_parquet(os.path.join(base_dir, f"{time_suffix}_trades.parquet"), index=False)
-                self.trades_buffer.clear()
-
-            if self.snapshots_buffer:
-                df = pd.DataFrame(self.snapshots_buffer)
-                df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms', utc=True)
-                df.to_parquet(os.path.join(base_dir, f"{time_suffix}_snapshots.parquet"), index=False)
-                self.snapshots_buffer.clear()
-
-            if self.ticks_buffer:
-                df = pd.DataFrame(self.ticks_buffer)
-                df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms', utc=True)
-                df.to_parquet(os.path.join(base_dir, f"{time_suffix}_ticks.parquet"), index=False)
-                self.ticks_buffer.clear()
+            for target_buffer, prefix in [(self.trades_buffer, "trades"), 
+                                          (self.snapshots_buffer, "snapshots"), 
+                                          (self.ticks_buffer, "ticks")]:
+                if not target_buffer:
+                    continue
+                
+                new_df = pd.DataFrame(target_buffer)
+                new_df['timestamp'] = pd.to_datetime(new_df['timestamp'], unit='ms', utc=True)
+                
+                file_path = os.path.join(base_dir, f"{time_suffix}_{prefix}.parquet")
+                
+                # Check for existing hourly file to append
+                if os.path.exists(file_path):
+                    try:
+                        old_df = pd.read_parquet(file_path)
+                        final_df = pd.concat([old_df, new_df], ignore_index=True)
+                        final_df.to_parquet(file_path, index=False)
+                    except Exception:
+                        new_df.to_parquet(file_path, index=False)
+                else:
+                    new_df.to_parquet(file_path, index=False)
+                
+                target_buffer.clear()
 
         except Exception:
             pass
@@ -115,23 +138,27 @@ async def update_markets_loop():
     json_out = os.path.join(_HERE, 'weather_data_fetched.json')
     while True:
         try:
+            print(f"[Daemon] Updating weather markets via {fetch_script}...")
+            # Use sys.executable to ensure we use the same conda env
             process = await asyncio.create_subprocess_shell(
-                f'python "{fetch_script}"',
+                f'"{sys.executable}" "{fetch_script}"',
                 stdout=asyncio.subprocess.PIPE, 
                 stderr=asyncio.subprocess.PIPE)
-            try:
-                await asyncio.wait_for(process.communicate(), timeout=60.0)
-            except asyncio.TimeoutError:
-                process.kill()
-                await process.communicate()
+            stdout, stderr = await asyncio.wait_for(process.communicate(), timeout=60.0)
+            
+            if process.returncode != 0:
+                print(f"[Daemon] Error fetching tokens: {stderr.decode()}")
             
             if os.path.exists(json_out):
                 with open(json_out, 'r', encoding='utf-8') as f:
                     data = json.load(f)
                     update_global_routing(data)
+                    print(f"[Daemon] Successfully updated routing. Active: {weather_shared_state.state['slugs_active']} buckets.")
+            else:
+                print(f"[Daemon] JSON output not found at {json_out}")
             
-        except Exception:
-            pass
+        except Exception as e:
+            print(f"[Daemon] Exception in update loop: {e}")
             
         await asyncio.sleep(15 * 60)
 
@@ -191,9 +218,11 @@ def update_global_routing(data):
 
 async def subscribe_and_listen():
     url = "wss://ws-subscriptions-clob.polymarket.com/ws/market"
+    print(f"[Daemon] Connecting to Polymarket CLOB at {url}...")
     
     backoff = 3
     async for websocket in websockets.connect(url, ping_interval=10, ping_timeout=10):
+        print("[Daemon] WebSocket Connected.")
         backoff = 3
         last_data_time = time.time()
         current_sub_ids = []
@@ -277,16 +306,46 @@ def process_ws_message(msg):
         meta['logger'].add_trade(server_time, asset_id, price, size, side)
 
 
+async def terminal_heartbeat():
+    """Prints a status line to the console every 60 seconds for server visibility."""
+    last_snaps = 0
+    last_ticks = 0
+    last_trades = 0
+    start_time = time.time()
+    
+    while True:
+        await asyncio.sleep(60)
+        curr_snaps = weather_shared_state.state['polymarket_snapshots']
+        curr_ticks = weather_shared_state.state['polymarket_ticks']
+        curr_trades = weather_shared_state.state['polymarket_trades']
+        
+        delta_snaps = curr_snaps - last_snaps
+        delta_ticks = curr_ticks - last_ticks
+        delta_trades = curr_trades - last_trades
+        
+        elapsed = int(time.time() - start_time)
+        uptime = f"{elapsed//3600:02d}:{(elapsed%3600)//60:02d}:{elapsed%60:02d}"
+        
+        print(f"[Heartbeat] {uptime} | Buckets: {weather_shared_state.state['slugs_active']} | "
+              f"Snaps: {curr_snaps}(+{delta_snaps}) | Ticks: {curr_ticks}(+{delta_ticks}) | Trades: {curr_trades}(+{delta_trades})")
+        
+        last_snaps, last_ticks, last_trades = curr_snaps, curr_ticks, curr_trades
+
 async def main_daemon():
+    print("=" * 60)
+    print("  PolyTrading Weather Daemon Started")
+    print("=" * 60)
+    
     fetcher_task = asyncio.create_task(update_markets_loop())
     
     while not active_tokens:
          await asyncio.sleep(1)
          
     ws_task = asyncio.create_task(subscribe_and_listen())
+    heartbeat_task = asyncio.create_task(terminal_heartbeat())
     
     try:
-        await asyncio.gather(fetcher_task, ws_task)
+        await asyncio.gather(fetcher_task, ws_task, heartbeat_task)
     except (KeyboardInterrupt, asyncio.CancelledError):
         pass
     finally:
