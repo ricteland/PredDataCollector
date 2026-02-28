@@ -23,7 +23,7 @@ def upload_and_cleanup():
         aws_secret_access_key=AWS_SECRET_ACCESS_KEY
     )
 
-    print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Starting nightly S3 upload to bucket: {S3_BUCKET_NAME}")
+    print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Starting S3 upload cycle to bucket: {S3_BUCKET_NAME}")
     
     if not os.path.exists(DATA_DIR):
         print(f"[INFO] Data directory {DATA_DIR} does not exist. Nothing to upload.")
@@ -33,10 +33,9 @@ def upload_and_cleanup():
     delete_count = 0
     skip_count = 0
     
-    # Calculate exactly 'yesterday'
-    today = datetime.date.today()
-    yesterday = today - datetime.timedelta(days=1)
-    print(f"[INFO] Targeting files modified on: {yesterday}")
+    now = time.time()
+    # Safety: Only upload files that haven't been touched in 2 hours (ensures hourly files are finished)
+    SAFETY_GAP = 2 * 3600 
 
     # Walk through the entire data directory recursively
     for root, dirs, files in os.walk(DATA_DIR):
@@ -45,37 +44,38 @@ def upload_and_cleanup():
                 local_path = os.path.join(root, file)
                 
                 try:
-                    # Get local modification date (can throw FileNotFoundError if deleted concurrently)
                     mtime = os.path.getmtime(local_path)
-                    file_date = datetime.date.fromtimestamp(mtime)
                     
-                    # ONLY flush if the file was modified yesterday
-                    if file_date != yesterday:
+                    # If the file was modified recently, skip it to avoid race conditions with collectors
+                    if (now - mtime) < SAFETY_GAP:
                         skip_count += 1
                         continue
                     
-                    # Create the S3 object key (maintaining the exact folder structure)
+                    # Create the S3 object key (maintaining the folder structure)
                     rel_path = os.path.relpath(local_path, DATA_DIR)
-                    s3_key = rel_path.replace("\\", "/") # Ensure clean paths
+                    s3_key = rel_path.replace("\\", "/") 
                     
-                    # Upload the Parquet file to S3
+                    # Upload
                     s3_client.upload_file(local_path, S3_BUCKET_NAME, s3_key)
                     print(f"[UPLOADED] {s3_key}")
                     upload_count += 1
                     
-                    # If upload is verifiably successful, delete the local file
                     os.remove(local_path)
                     print(f"[DELETED LOCAL] {local_path}")
                     delete_count += 1
                         
                 except FileNotFoundError:
-                    print(f"[WARN] File disappeared during processing (concurrent delete?): {local_path}")
+                    pass
                 except ClientError as e:
                     print(f"[ERROR] Failed to upload {local_path}: {e}")
                 except Exception as e:
                     print(f"[ERROR] Unexpected error processing {local_path}: {e}")
 
-    print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Nightly job complete. Uploaded {upload_count} files, deleted {delete_count} files locally. Skipped {skip_count} active files.")
+    print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Cycle complete. Uploaded {upload_count} files, deleted {delete_count} files locally. Skipped {skip_count} active files.")
 
 if __name__ == "__main__":
-    upload_and_cleanup()
+    print(f"S3 Uploader is now in Continuous Mode (Cycle: Every 6 hours)")
+    while True:
+        upload_and_cleanup()
+        print(f"Waiting 6 hours until next cycle...")
+        time.sleep(6 * 3600)

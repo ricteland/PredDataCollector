@@ -28,6 +28,7 @@ class DataLogger:
         self.ticks_buffer = []
         self.last_flush = time.time()
         self.flush_interval = 900 # 15 minutes
+        weather_shared_state.state['next_flush_time'] = self.last_flush + self.flush_interval
         
         # Deduplication state
         self.last_snapshot = None # (bids_json, asks_json)
@@ -90,6 +91,8 @@ class DataLogger:
     def flush_if_needed(self):
         if time.time() - self.last_flush >= self.flush_interval:
             self.flush()
+            return True
+        return False
 
     def flush(self):
         now = datetime.datetime.now(datetime.timezone.utc)
@@ -252,8 +255,13 @@ async def subscribe_and_listen():
                     raise
                 
                 unique_loggers = { meta['logger'] for meta in active_tokens.values() }
+                flushed_any = False
                 for logger in unique_loggers:
-                     logger.flush_if_needed()
+                     if logger.flush_if_needed():
+                         flushed_any = True
+                
+                if flushed_any:
+                    print(f"[Daemon] Hourly flush complete for {len(unique_loggers)} loggers.")
                     
         except websockets.exceptions.ConnectionClosed:
             await asyncio.sleep(backoff)
@@ -326,7 +334,9 @@ async def terminal_heartbeat():
         elapsed = int(time.time() - start_time)
         uptime = f"{elapsed//3600:02d}:{(elapsed%3600)//60:02d}:{elapsed%60:02d}"
         
-        print(f"[Heartbeat] {uptime} | Buckets: {weather_shared_state.state['slugs_active']} | "
+        next_f = max(0, int(weather_shared_state.state['next_flush_time'] - time.time()))
+        
+        print(f"[Heartbeat] {uptime} | Next Flush: {next_f}s | Buckets: {weather_shared_state.state['slugs_active']} | "
               f"Snaps: {curr_snaps}(+{delta_snaps}) | Ticks: {curr_ticks}(+{delta_ticks}) | Trades: {curr_trades}(+{delta_trades})")
         
         last_snaps, last_ticks, last_trades = curr_snaps, curr_ticks, curr_trades
