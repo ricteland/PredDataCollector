@@ -6,9 +6,11 @@ from botocore.exceptions import ClientError
 from pathlib import Path
 
 # Load credentials from environment variables for security
-AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
-AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
-S3_BUCKET_NAME = os.getenv('S3_BUCKET_NAME')
+AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID', '').strip()
+AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY', '').strip()
+S3_BUCKET_NAME = os.getenv('S3_BUCKET_NAME', '').strip()
+S3_ENDPOINT_URL = os.getenv('S3_ENDPOINT_URL') # Optional: Use for R2/Wasabi/etc.
+
 _ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(_ROOT, "data")
 
@@ -20,7 +22,8 @@ def upload_and_cleanup():
     s3_client = boto3.client(
         's3',
         aws_access_key_id=AWS_ACCESS_KEY_ID,
-        aws_secret_access_key=AWS_SECRET_ACCESS_KEY
+        aws_secret_access_key=AWS_SECRET_ACCESS_KEY,
+        endpoint_url=S3_ENDPOINT_URL
     )
 
     print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Starting S3 upload cycle to bucket: {S3_BUCKET_NAME}")
